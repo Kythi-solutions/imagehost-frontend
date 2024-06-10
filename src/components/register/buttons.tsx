@@ -54,7 +54,7 @@ export default function Buttons(props: any) {
               handleShowNextFeature();
             }}
           >
-            Submit The Form a
+            Register
           </Button>
         )}
       </div>

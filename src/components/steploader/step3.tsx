@@ -130,7 +130,7 @@ const Step3 = () => {
             Go Back
           </button> */}
           {/* <ButtonPrimary name={"Next Step"} onClick={handleSubmit} /> */}
-          <Buttons />
+          <Buttons handleclick={handleSubmit} />
         </div>
       </div>
     </motion.div>

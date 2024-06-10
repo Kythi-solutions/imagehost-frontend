@@ -175,7 +175,7 @@ const Step2 = () => {
               onClick={handleSubmit}
               inactive={chosenPlan ? false : true}
             /> */}
-            <Buttons handlesubmit={handleSubmit} />
+            <Buttons handleclick={handleSubmit} />
           </div>
         </div>
       </div>

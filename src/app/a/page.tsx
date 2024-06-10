@@ -12,6 +12,7 @@ import Step3 from "@/components/steploader/step3";
 
 import { StepContext } from "@/components/steploader/context";
 import Buttons from "@/components/register/buttons";
+import Step4 from "@/components/steploader/step4";
 
 const cardVariants = {
   hidden: {
@@ -30,9 +31,16 @@ const cardVariants = {
 export default function Register() {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // api.req("/@me", bearer); 
+  // registered == true
+  // if not:
+  //  ask to create acc
+  // if yes:
+  //  redirect to dashboard
+
   const { currentStep, handleSetCurrentStep, form } = useContext(StepContext);
 
-  const steps = [<Step1 />, <Step2 />, <Step3 />, <Step1 />];
+  const steps = [<Step1 />, <Step2 />, <Step3 />, <Step4 />];
 
   useEffect(() => {
     const handleLoad = () => {
