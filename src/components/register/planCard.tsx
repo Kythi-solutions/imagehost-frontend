@@ -16,8 +16,8 @@ const PlanCard = ({
   id: number;
   icon: string;
   title: string;
-  priceYr: number;
-  priceMo: number;
+  priceYr: string | number;
+  priceMo: string | number;
   onClick: () => void;
   isActive: boolean;
   isChosen: boolean;
@@ -32,8 +32,8 @@ const PlanCard = ({
       onKeyPress={onKeyPress}
       onClick={onClick}
       className={`w-full text-start rounded-lg border-2 py-4 md:py-5 px-4 flex gap-4 md:flex-col md:justify-between cursor-pointer ${
-        isChosen && "border-red-200"
-      } ${isActive && "border-red-500"}`}
+        isChosen && "border-bordinput"
+      } ${isActive && "border-bordinput"}`}
     >
       <div className="w-[25px] h-[25px] rounded-full overflow-hidden">
         <Icon icon={icon} className="w-full h-full object-cover" />
@@ -41,9 +41,8 @@ const PlanCard = ({
       <div className="">
         <h2 className="font-semibold">{title}</h2>
         <p className="text-gray-cool text-sm">
-          
           {priceYr ? `$${priceYr}/yr` : ""}
-          {priceMo ?  `$${priceMo}/mo`: ""}
+          {priceMo ? `$${priceMo}/mo` : ""}
         </p>
       </div>
     </motion.button>

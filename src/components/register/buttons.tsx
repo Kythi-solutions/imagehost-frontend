@@ -3,10 +3,6 @@ import { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/shadcn/button";
 
 import { StepContext } from "../steploader/context";
-import Step1 from "../steploader/step1";
-import Step2 from "../steploader/step1";
-
-// <meow a="" />
 
 export default function Buttons(props: any) {
   const { currentStep, handleSetCurrentStep } = useContext(StepContext);

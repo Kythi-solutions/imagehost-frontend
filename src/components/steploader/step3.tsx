@@ -5,24 +5,23 @@ import AddOns from "@/components/register/addOns";
 import Buttons from "../register/buttons";
 
 const Step3 = () => {
-  const [yearly, setYearly] = useState(false);
   const [checked, setChecked] = useState([] as any);
 
   const addOns = [
     {
       id: 1,
-      name: "Online service",
-      desc: "Access to multiplayer games",
+      name: "Private profile",
+      desc: "Make your profile private",
     },
     {
       id: 2,
-      name: "Larger storage",
-      desc: "Extra 1TB of cloud save",
+      name: "Enable file wiping",
+      desc: "Wipe uploaded files after 30 days",
     },
     {
       id: 3,
-      name: "Customizable profile",
-      desc: "Custom theme on your profile",
+      name: "Custom domain",
+      desc: "Select your custom domain",
     },
   ];
 
@@ -78,7 +77,7 @@ const Step3 = () => {
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -100, opacity: 0 }}
       transition={{ delay: 0.1 }}
-      className="w-full h-full px-5  text-blue-marine flex flex-col"
+      className="flex flex-col"
     >
       <div className="relative z-20">
         <motion.div
@@ -88,11 +87,12 @@ const Step3 = () => {
           transition={{ delay: 0.15 }}
           className="text-content mb-4 md:mb-6"
         >
-          <h1 className="text-2xl md:text-4xl font-semibold mb-2">
-            Pick add-ons
+          <h1 className="text-2xl md:text-3xl font-semibold mb-2">
+            Personalise your experience
           </h1>
           <p className="text-gray-cool text-sm">
-            Add-ons help enhance your gaming experience.
+            Use the options below to customise your account and make it your
+            own.
           </p>
         </motion.div>
         <div className="w-full grid gap-3">

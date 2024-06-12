@@ -3,6 +3,7 @@ import { Button } from "../shadcn/button";
 import { StepContext } from "./context";
 import { motion, AnimatePresence } from "framer-motion";
 import Buttons from "../register/buttons";
+import { Input } from "../shadcn/input";
 
 const Step1 = (button: any) => {
   const { currentStep, handleSetCurrentStep, handleUpdateFormData, form } =
@@ -33,7 +34,7 @@ const Step1 = (button: any) => {
     const handleBackButtonPress = (e: any) => {
       if (e.key === "Backspace" || e.key === "Back") {
         e.preventDefault();
-        handleSetCurrentStep(3);
+        handleSetCurrentStep(2);
       }
     };
 
@@ -94,21 +95,21 @@ const Step1 = (button: any) => {
           transition={{ delay: 0.1 }}
           className="text-content mb-4 md:mb-6"
         >
-          <h1 className="text-2xl md:text-4xl font-semibold mb-2">
+          <h1 className="text-2xl md:text-3xl font-semibold mb-2">
             Create an account
           </h1>
           <p className="text-gray-cool text-sm">
             Welcome to Kythi! Please enter your details to get started.
           </p>
         </motion.div>
-        <form className="text-sm" autoComplete="off" autoSave="tr">
+        <form className="sm:text-sm space-y-4" autoComplete="off" autoSave="tr">
           <div className="flex gap-2 w-full">
             <motion.div
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
               transition={{ delay: 0.2 }}
-              className="w-full"
+              className="w-full space-y-2"
             >
               <div className="flex items-center justify-between">
                 <label htmlFor="username" className="block font-medium">
@@ -118,7 +119,8 @@ const Step1 = (button: any) => {
                   <p className="font-semibold text-red-600">{usernameError}</p>
                 )}
               </div>
-              <input
+
+              <Input
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -127,32 +129,29 @@ const Step1 = (button: any) => {
                 type="text"
                 id="username"
                 placeholder="Enter your username"
-                className={`p-2.5 outline-none hover:border-bordinput rounded-lg border-2 w-full mt-1 mb-3 md:mb-6 bg-inherit ${
-                  usernameError && "border-red-600"
+                className={` ${
+                  usernameError && "border-red-600/30 hover:border-red-600/60"
                 }`}
               />
             </motion.div>
 
-            <div className="w-full">
-              <motion.div
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 100, opacity: 0 }}
-                transition={{ delay: 0.2 }}
-                className="flex items-center justify-between"
-              >
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ delay: 0.2 }}
+              className="w-full space-y-2"
+            >
+              <div className="flex items-center justify-between">
                 <label htmlFor="email" className="block font-medium">
                   Email address
                 </label>
                 {emailError.length > 0 && (
                   <p className="font-semibold text-red-600">{emailError}</p>
                 )}
-              </motion.div>
-              <motion.input
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: 100, opacity: 0 }}
-                transition={{ delay: 0.2 }}
+              </div>
+
+              <Input
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -161,33 +160,30 @@ const Step1 = (button: any) => {
                 type="email"
                 id="email"
                 placeholder="Enter your email address"
-                className={`p-2.5 rounded-lg hover:border-bordinput outline-none border-2 w-full mt-1 mb-3 md:mb-6 bg-inherit ${
-                  emailError && "border-red-600"
+                className={` ${
+                  emailError && "border-red-600/30 hover:border-red-600/60"
                 }`}
               />
-            </div>
+            </motion.div>
           </div>
           {/* password */}
-          <div>
-            <motion.div
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center justify-between"
-            >
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ delay: 0.3 }}
+            className="space-y-2"
+          >
+            <div className="flex items-center justify-between">
               <label htmlFor="password" className="block font-medium">
                 Password
               </label>
               {passwordError.length > 0 && (
                 <p className="font-semibold text-red-600">{passwordError}</p>
               )}
-            </motion.div>
-            <motion.input
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ delay: 0.3 }}
+            </div>
+
+            <Input
               value={password}
               type="password"
               onChange={(e) => {
@@ -196,31 +192,28 @@ const Step1 = (button: any) => {
               }}
               id="password"
               placeholder="Enter your password"
-              className={`p-2.5 rounded-lg outline-none hover:border-bordinput border-2 w-full mt-1 mb-3 md:mb-6 bg-inherit ${
-                passwordError && "border-red-600"
+              className={` ${
+                passwordError && "border-red-600/30 hover:border-red-600/60"
               }`}
             />
-          </div>
-          <div>
-            <motion.div
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ delay: 0.35 }}
-              className="flex items-center justify-between"
-            >
+          </motion.div>
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ delay: 0.35 }}
+            className="space-y-2"
+          >
+            <div className="flex items-center justify-between">
               <label htmlFor="invite" className="block font-medium">
                 Invite
               </label>
               {inviteError.length > 0 && (
                 <p className="font-semibold text-red-600">{inviteError}</p>
               )}
-            </motion.div>
-            <motion.input
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ delay: 0.35 }}
+            </div>
+
+            <Input
               value={invite}
               onChange={(e) => {
                 setInviteError("");
@@ -228,21 +221,20 @@ const Step1 = (button: any) => {
               }}
               id="invite"
               placeholder="Kythi-1234-5678-9101"
-              className={`p-2.5 rounded-lg hover:border-bordinput outline-none border-2 w-full mt-1 mb-3 md:mb-6 bg-inherit ${
-                inviteError && "border-red-600"
+              className={`${
+                inviteError && "border-red-600/30 hover:border-red-600/60"
               }`}
             />
-          </div>
+          </motion.div>
         </form>
         <div>
-          {/* <Button name={"Next Step"} onClick={handleSubmit} /> */}
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.8 }}
             exit={{ y: 100, opacity: 0 }}
           >
-            <div className="flex items-center">
+            <div className="flex items-center mt-4">
               <div className="flex-grow h-px bg-border" />
               <span className="px-4 text-gray-500 text-sm">or</span>
               <div className="flex-grow h-px bg-border" />

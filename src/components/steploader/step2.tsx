@@ -2,10 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { StepContext } from "./context";
 import PlanCard from "@/components/register/planCard";
 
-// import arcadeIcon from "../assets/img/icon-arcade.svg";
-// import advancedIcon from "../assets/img/icon-advanced.svg";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "../shadcn/button";
 import Buttons from "../register/buttons";
 
 const Step2 = () => {
@@ -29,7 +26,7 @@ const Step2 = () => {
   }, [handleSetCurrentStep]);
 
   const plans = [
-    { name: "Free", icon: "lucide:circle-plus", price: -1, type: "monthly" },
+    { name: "Free", icon: "lucide:circle-plus", price: "0", type: "monthly" },
     { name: "Basic", icon: "lucide:circle-plus", price: 12, type: "monthly" },
     { name: "Pro", icon: "lucide:circle-plus", price: 15, type: "monthly" },
     {
@@ -51,12 +48,6 @@ const Step2 = () => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSubmit();
-    }
-  };
-
   return (
     <AnimatePresence mode="wait">
       <div className="">
@@ -68,7 +59,7 @@ const Step2 = () => {
             transition={{ delay: 0.1 }}
             className="text-content mb-4 md:mb-6"
           >
-            <h1 className="text-2xl md:text-4xl font-semibold mb-2">
+            <h1 className="text-2xl md:text-3xl font-semibold mb-2">
               Select your plan
             </h1>
             <p className="text-gray-cool text-sm">
@@ -79,7 +70,6 @@ const Step2 = () => {
 
           {yearly ? (
             <div className="flex flex-col md:flex-row gap-2">
-              {/* {plans.map((plan, i) => plan.type === 'yearly' && <PlanCard key={i} id={i} icon={plan.icon} title={plan.name} priceYr={plan.price} onClick={() => handlePlan(plans[i])} isActive={chosenPlan && chosenPlan.price === plan.price ? true : false} isChosen={form && form.price === plan.price ? true : false} onKeyPress={handleKeyPress} />)} */}
               {plans.map(
                 (plan, i) =>
                   plan.type === "yearly" && (
@@ -148,7 +138,7 @@ const Step2 = () => {
                 handlePlan(false);
                 // handleData3null();
               }}
-              className="w-8 aspect-video rounded-full bg-blue-300/80 p-1"
+              className="w-8 aspect-video rounded-full bg-bordinput p-1"
             >
               <span
                 className={`block w-3 h-3 rounded-full bg-white duration-150 ${

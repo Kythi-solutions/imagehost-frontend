@@ -17,10 +17,11 @@ function NavLink({ text, href, primary }: NavLinkProps) {
     //   <a className="transition text-md cursor-pointer text-sm font-medium text-primary-white duration-300 hover:text-gray-300">
     //   </a>
     // </Link>
-
-    <Button variant={"ghost"} size="sm">
-      {text}
-    </Button>
+    <Link href={href}>
+      <Button variant={"ghost"} size="sm">
+        {text}
+      </Button>
+    </Link>
   );
 }
 

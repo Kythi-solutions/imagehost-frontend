@@ -2,17 +2,13 @@
 import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Index/Navbar";
-import { Button } from "@/components/shadcn/button";
-import { Input } from "@/components/shadcn/input";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import SideCard from "@/components/sidebar/sideCard";
 import Step1 from "@/components/steploader/step1";
 import Step2 from "@/components/steploader/step2";
 import Step3 from "@/components/steploader/step3";
+import Step4 from "@/components/steploader/step4";
 
 import { StepContext } from "@/components/steploader/context";
-import Buttons from "@/components/register/buttons";
-import Step4 from "@/components/steploader/step4";
 
 const cardVariants = {
   hidden: {
@@ -31,7 +27,7 @@ const cardVariants = {
 export default function Register() {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // api.req("/@me", bearer); 
+  // api.req("/@me", bearer);
   // registered == true
   // if not:
   //  ask to create acc
@@ -64,7 +60,7 @@ export default function Register() {
         <div className="flex flex-col w-full items-center justify-center p-12">
           <div className="max-w-lg w-full">{steps[currentStep - 1]}</div>
         </div>
-        <div className="flex-col lg:max-w-2xl w-full bg-zinc-900/15 h-full text-white p-12 space-y-6 lg:block hidden">
+        <div className="flex-col lg:max-w-2xl w-full bg-[#f2f3f5] dark:bg-zinc-900/15 h-full dark:text-white p-12 space-y-6 lg:block hidden">
           <div className="grid gap-20 mt-32">
             <motion.div
               initial="hidden"
@@ -85,8 +81,8 @@ export default function Register() {
               >
                 <SideCard
                   number={2}
-                  title="Multiple ways to register"
-                  description="Register with your email, or with, discord, github or google."
+                  title="Pick a plan"
+                  description="Select a plan that feels right for you, you can always switch your plan later."
                 />
               </motion.div>
             )}
@@ -98,8 +94,8 @@ export default function Register() {
               >
                 <SideCard
                   number={3}
-                  title="Free to use"
-                  description="Kythi has a free plan that is available to everyone."
+                  title="Personalize"
+                  description="Add some personal touches to your account to truly customise your file sharing experience."
                 />
               </motion.div>
             )}
@@ -111,8 +107,8 @@ export default function Register() {
               >
                 <SideCard
                   number={4}
-                  title="Free to use"
-                  description="Kythi has a free plan that is available to everyone."
+                  title="Authentication"
+                  description="We have two methods of multi-factor authentication, choose one that suits you best to secure your account."
                 />
               </motion.div>
             )}
