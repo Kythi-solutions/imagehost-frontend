@@ -36,7 +36,7 @@ export default function Register() {
 
   const { currentStep, handleSetCurrentStep, form } = useContext(StepContext);
 
-  const steps = [<Step1 />, <Step2 />, <Step3 />, <Step4 />];
+  const steps = [<Step1 key={0} />, <Step2 key={1} />, <Step3 key={2}/>, <Step4 key={3}/>];
 
   useEffect(() => {
     const handleLoad = () => {

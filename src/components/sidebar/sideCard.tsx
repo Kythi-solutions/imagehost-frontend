@@ -11,7 +11,7 @@ type sideCardProps = {
   description: string;
 };
 
-export default function sideCard({
+export default function SideCard({
   number,
   title,
   description,
