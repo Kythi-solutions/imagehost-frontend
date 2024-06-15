@@ -45,7 +45,7 @@ const AddOns = ({ title, desc, id, onChange, checked }: AddOnsProps) => {
           <div className="flex-1 flex justify-between items-center text-xs md:text-[14px]">
             <div className="">
               <h1 className="font-bold text-[14px] md:text-[16px]">{title}</h1>
-              <p className="text-gray-cool">{desc}</p>
+              <p className="text-gray-cool pt-2 dark:text-zinc-400">{desc}</p>
             </div>
           </div>
         </div>

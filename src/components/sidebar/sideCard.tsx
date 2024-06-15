@@ -21,22 +21,28 @@ export default function SideCard({
   return (
     <>
       <div className="flex flex-col gap-6 items-center justify-center">
-        <div
+  {/*      <div
           onClick={() => handleSetCurrentStep(number)}
-          className={`flex items-center gap-4 rounded-md w-full hover:dark:bg-zinc-800/30 hover:bg-card cursor-pointer p-2 duration-300 ${
-            currentStep === number ? "dark:bg-zinc-800/30 bg-card" : ""
+          className={`flex items-center gap-4 rounded-md w-full hover:dark:bg-secondaryLighterHover hover:bg-card cursor-pointer p-4 pr-8  duration-300 border-solid border-2 border-secondaryLighterHover ${
+            currentStep === number ? "dark:bg-secondaryLighter bg-card" : ""
+          }`}
+        >*/}
+                  <div
+          onClick={() => handleSetCurrentStep(number)}
+          className={`flex items-center gap-4 rounded-lg w-full hover:dark:bg-secondaryLighterHover hover:bg-card cursor-pointer bg-transparent p-4 pr-8  duration-300  ${
+            currentStep === number ? "bg-card dark:bg-secondaryLighter border-solid border-2 border-secondaryLighterHover" : ""
           }`}
         >
-          <div className="p-6 flex items-center rounded-lg dark:bg-zinc-800/10 shadow-2xl">
+          <div className="p-6 flex items-center rounded-lg dark:bg-secondaryAlternative shadow-lg">
             <div
-              className={`w-[33px] h-[33px] flex items-center justify-center text-sm font-semibold`}
+              className={`w-[33px] h-[33px] flex items-center justify-center text-xl font-semibold`}
             >
               {number}
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <h1 className="text-xl font-semibold max-w-3xl">{title}</h1>
-            <p className="text-sm">{description}</p>
+            <p className="text-sm dark:text-zinc-400">{description}</p>
           </div>
         </div>
       </div>

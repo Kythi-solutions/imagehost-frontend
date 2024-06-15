@@ -21,6 +21,10 @@ const config = {
         bordinput: "hsl(var(--bordinput))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        backgroundSecondary: "hsl(var(--backgroundSecondary))",
+        secondaryLighter: "rgba(var(--secondaryLighter))",
+        secondaryLighterHover: "rgba(var(--secondaryLighterHover))",
+        secondaryAlternative: "rgba(var(--secondaryAlternative))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
