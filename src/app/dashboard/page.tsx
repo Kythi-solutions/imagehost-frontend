@@ -14,7 +14,7 @@ export default function Dashboard() {
   return (
     <>
 
-      <div className="flex h-screen p-8">
+      <div className="flex h-screen p-6">
         <Sidebar location="dash" />
        </div>
 

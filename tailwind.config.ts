@@ -20,7 +20,19 @@ const config = {
         input: "hsl(var(--input))",
         bordinput: "hsl(var(--bordinput))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+
+        button: {
+          DEFAULT: "rgba(var(--button))",
+          hover: "rgba(var(--button-hover))",
+        },
+
+        background: {
+          DEFAULT: "rgba(var(--background))",
+          light: "rgba(var(--background-light))",
+          lighter: "rgba(var(--background-lighter))",
+        },
+        
+
         backgroundSecondary: "hsl(var(--backgroundSecondary))",
         secondaryLighter: "rgba(var(--secondaryLighter))",
         secondaryLighterHover: "rgba(var(--secondaryLighterHover))",

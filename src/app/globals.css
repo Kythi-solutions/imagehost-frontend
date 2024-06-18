@@ -34,10 +34,16 @@
     --bordinput: 222 21% 9%;
 
     --radius: 0.5rem;
+    --button: 2, 95, 253, 1;
+    
+
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 20, 21, 24, 1;
+    --background-light: 27, 28, 33, 1;
+    --background-lighter: 255,255,255,0.02;
+    
     --foreground: 0 0% 98%;
 
     --card: 240 10% 3.9%;
@@ -45,6 +51,9 @@
 
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
+
+    --button: 250, 250, 250, 1;
+    --button-hover: 250, 250, 250, 0.7;
 
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -65,10 +74,7 @@
     --border: 240 3.7% 15.9%;
     --input: 222 21% 7%;
     --bordinput: 222 30% 30%;
-    --backgroundSecondary: 	240 11% 5%;
-    --secondaryLighter: 255, 255, 255, 0.015;
-    --secondaryAlternative: 255, 255, 255, 0.02;
-    --secondaryLighterHover: 255, 255, 255, 0.013;
+
   }
 }
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../shadcn/button";
 import SideBarDropdown from "./sideBarDropdown";
+import FoldMenu from "./foldMenu";
 const SideLink: React.FC<{
   text: string;
   icon: React.ReactNode;
@@ -12,34 +13,35 @@ const SideLink: React.FC<{
 }> = (props) => (
   <Link href={props.href}>
     <Button
-    size="sm"
-    //@ts-ignore
-     variant={props.active ? "primary" : "ghost"}
-      className={`w-full gap-1 flex justify-start ${props.active && "bg-[#181C25]"
-        }`}
+      size="sm"
+      //@ts-ignore
+      variant={props.active ? "primary" : "ghost"}
+      className={`w-full gap-1 flex justify-start ${
+        props.active && "bg-background-lighter"
+      }`}
     >
       {props.icon}
       <p className="text-primary-white/80">{props.text}</p>
     </Button>
   </Link>
-)
+);
 
 const Sidebar: React.FC<{
   location?:
-  | "dash"
-  | "settings"
-  | "files"
-  | "domains"
-  | "referrals"
-  | "support"
-  | "admin";
+    | "dash"
+    | "settings"
+    | "files"
+    | "domains"
+    | "referrals"
+    | "support"
+    | "admin";
   subSection?: "gallery" | "pastes" | "collections";
 }> = (props) => {
   const [checked, setChecked] = React.useState(false);
 
   return (
-    <div className="flex-col w-64 rounded-lg backdrop-blur-sm dark:bg-zinc-900/15 desktop:flex ">
-      <div className="w-full p-2 pt-5 pl-5 pb-5 flex gap-2 bg-[#16171f]/50 border-b-primary-blue/10 border-b items-center rounded-t-lg">
+    <div className="flex-col w-64 rounded-md backdrop-blur-sm shadow-lg dark:bg-background-light desktop:flex ">
+      <div className="w-full p-2 pt-5 pl-5 pb-5 flex gap-2 bg-background-lighter items-center rounded-t-lg">
         {/* <img className="h-5" src="/logo.svg" alt="logo" /> */}
         <h1
           className="font-semibold cursor-pointer"
@@ -53,12 +55,17 @@ const Sidebar: React.FC<{
 
       <div className="flex w-full flex-col px-4 py-2 text-xs gap-2">
         <div className="flex gap-2 items-center pb-2 pl-2 mt-4">
-          <p className="text-xs text-secondary/90">General</p>
+          <p className="text-xs text-gray-300">General</p>
 
-          <div className="border-b border-secondary/50 w-full" />
+          <div className=" border-b border-b-gray-700 w-full" />
         </div>
-
-        <SideLink text={"Dashboard"} icon={<Icon icon="akar-icons:dashboard" className="w-4 h-4" />} active={props.location == "dash"} href={"/dash"} />
+        <SideLink
+          text={"Dashboard"}
+          icon={<Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />}
+          active={props.location == "dash"}
+          href={"/dash"}
+        />
+        <FoldMenu/>
 
         {/* <Menu>
           <Menu.Button>
@@ -136,104 +143,78 @@ const Sidebar: React.FC<{
         </Menu> */}
 
         <div className="flex gap-2 items-center pb-2 pl-2 mt-4">
-          <p className="text-xs text-secondary/90">Preferences</p>
+          <p className="text-xs text-gray-300">Preferences</p>
 
-          <div className="border-b border-secondary/50 w-full" />
+          <div className="border-b border-b-gray-700 w-full" />
         </div>
 
-        <SideLink text={"Settings"} icon={<Icon icon="akar-icons:settings-horizontal" className="w-4 h-4 mr-1" />} active={props.location == "settings"} href={"/dash/settings"} />
-        <SideLink text={"Domains"} icon={<Icon icon="akar-icons:globe" className="w-4 h-4 mr-1" />} active={props.location == "domains"} href={"/dash/domains"} />
+        <SideLink
+          text={"Settings"}
+          icon={
+            <Icon
+              icon="akar-icons:settings-horizontal"
+              className="w-4 h-4 mr-1"
+            />
+          }
+          active={props.location == "settings"}
+          href={"/dash/settings"}
+        />
+        <SideLink
+          text={"Domains"}
+          icon={<Icon icon="akar-icons:globe" className="w-4 h-4 mr-1" />}
+          active={props.location == "domains"}
+          href={"/dash/domains"}
+        />
 
         <div className="flex gap-2 items-center pb-2 pl-2 mt-4">
-          <p className="text-xs text-secondary/90">More</p>
+          <p className="text-xs text-gray-300">More</p>
 
-          <div className="border-b border-secondary/50 w-full" />
+          <div className=" border-b border-b-gray-700 w-full" />
         </div>
-        <SideLink text={"Referrals"} icon={<Icon icon="akar-icons:gift" className="w-4 h-4 mr-1" />} active={props.location == "referrals"} href={"/dash/referrals"} />
-        <SideLink text={"Support"} icon={<Icon icon="akar-icons:chat-question" className="w-4 h-4 mr-1" />} active={props.location == "support"} href={"/dash/support"} />
-        <SideLink text={"Admin Panel"} icon={<Icon icon="akar-icons:double-sword" className="w-4 h-4 mr-1" />} active={props.location == "admin"} href={"/dash/admin"} />
+        <SideLink
+          text={"Referrals"}
+          icon={<Icon icon="akar-icons:gift" className="w-4 h-4 mr-1" />}
+          active={props.location == "referrals"}
+          href={"/dash/referrals"}
+        />
+        <SideLink
+          text={"Support"}
+          icon={
+            <Icon icon="akar-icons:chat-question" className="w-4 h-4 mr-1" />
+          }
+          active={props.location == "support"}
+          href={"/dash/support"}
+        />
+        <SideLink
+          text={"Admin Panel"}
+          icon={
+            <Icon icon="akar-icons:double-sword" className="w-4 h-4 mr-1" />
+          }
+          active={props.location == "admin"}
+          href={"/dash/admin"}
+        />
       </div>
       <div className="absolute w-full bottom-0">
-        {/* <img
+        <img
           alt="Backdrop"
-          src="/backdrop.png"
-          className="absolute max-w-xs z-10 h-24 w-full rounded-b-lg opacity-10  md:max-w-md"
-        /> */}
-        {/* <div className="bg-red-200 absolute h-24 w-full rounded-b-lg opacity-10 md:max-w-md" /> */}
+          src="https://images.unsplash.com/photo-1548567117-02328f050eaa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="absolute max-w-xs z-10 h-24 w-full rounded-b-lg opacity-20  md:max-w-md z-0"
+        />
 
         <div className="ml-4 z-50 justify-between pr-3 flex items-center h-24">
           <div className="flex items-center justify-center gap-3">
-            {/* <img
-              src="/defaultpfp.png"
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
               alt="Profile Picture"
               className="h-9 w-9 rounded-full object-cover"
-            /> */}
+            />
             <div className="max-w-[120px]">
-              <p className="truncate text-primary-white">psycho</p>
-              <p className="truncate text-xs text-secondary">
-                @psychokythipscyhosigher
-              </p>
+              <p className="truncate text-primary">Brooky</p>
+              <p className="truncate text-xs text-primary">@bbrooklyn</p>
             </div>
           </div>
           <div>
             <SideBarDropdown />
-            {/* <Dropdown
-              button={
-                <>
-                  <Icon
-                    icon="akar-icons:more-vertical"
-                    className="w-[20px] h-[20px] cursor-pointer z-40"
-                  />
-                </>
-              }
-              content={
-                <>
-                  <div className="p-3 border-b border-b-primary-blue/10">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-sm font-semibold">NahSahh</p>
-                        <p className="text-xs text-primary-white/80">
-                          nahsahh@outlook.com
-                        </p>
-                      </div>
-
-                      <div className="px-3 select-none text-xs flex items-center h-6 rounded-xl bg-gradient-to-r from-primary-blue to-[#5D00FF] font-medium">
-                        Pro
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-2 grid gap-1 text-sm border-b border-b-primary-blue/10">
-                    <Link href="/dash/account">
-                      <div className="cursor-pointer flex gap-2 items-center anim select-none hover:bg-[#181C25] rounded-md px-3 h-7 group">
-                        <Icon icon="akar-icons:person" className="w-4 h-4" />
-                        <p className="text-primary-white/80 text-xs">
-                          Account Settings
-                        </p>
-                      </div>
-                    </Link>
-                    <div className="flex  items-center justify-between select-none px-3 h-7">
-                      <div className="flex gap-2 items-center anim">
-                        <Icon icon="akar-icons:moon" className="w-4 h-4" />
-                        <p className="text-primary-white/80 text-xs">
-                          Dark Mode
-                        </p>
-                      </div>
-
-                      <Switch
-                        checked={checked}
-                        onChange={() => {
-                          setChecked(!checked);
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="p-5 cursor-pointer flex gap-2 items-center anim select-none hover:bg-[#181C25] rounded-md px-3 h-7 group">
-                    <Icon icon="akar-icons:door" className="mt-[2px] w-4 h-4" />
-                    <p className="text-primary-white/80 text-xs">Logout</p>
-                  </div>
-                </>
-              }
-            /> */}
           </div>
         </div>
       </div>
