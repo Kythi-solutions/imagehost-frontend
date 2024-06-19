@@ -14,9 +14,9 @@ export default function SideBarDropdown() {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger className="outline-none"><Icon className="h-6 w-6" icon="lucide:ellipsis-vertical" />
+        <DropdownMenuTrigger className="outline-none hover:bg-background-lighter rounded-full p-2"><Icon className="h-6 w-6" icon="lucide:ellipsis-vertical" />
 </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-64">
+        <DropdownMenuContent className="w-64 dark:bg-background-light">
           <DropdownMenuLabel>
             <p>Username</p>
 <p className="font-normal">user@outlook.com</p>
@@ -25,7 +25,7 @@ export default function SideBarDropdown() {
           <DropdownMenuItem><Icon className="mr-2" icon="lucide:settings"/>Account Settings</DropdownMenuItem>
           <DropdownMenuItem><Icon className="mr-2" icon="lucide:credit-card"/>Subscription</DropdownMenuItem>
           <DropdownMenuSeparator/>
-          <DropdownMenuItem><Icon className="mr-2" icon="lucide:headphones"/> Support</DropdownMenuItem>
+          <DropdownMenuItem><Icon className="mr-2" icon="lucide:headphones"/>Support</DropdownMenuItem>
           <DropdownMenuItem><Icon className="mr-2" icon="lucide:log-out"/>Logout</DropdownMenuItem>
           {/*Dark mode toggle here */}
         </DropdownMenuContent>

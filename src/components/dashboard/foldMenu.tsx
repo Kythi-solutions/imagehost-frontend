@@ -20,7 +20,7 @@ const SideLink: React.FC<{
     <Button
       size="sm"
       //@ts-ignore
-      variant={props.active ? "primary" : "ghost"}
+      variant="primary"
       className={`w-full gap-1 flex justify-start ${
         props.active && "bg-background-lighter"
       }`}
@@ -46,21 +46,24 @@ const FoldMenu: React.FC<{
 
   return (
     <>
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full border-b-0">
         <AccordionItem value="item-1" className="w-full">
-          <AccordionTrigger>
+          <AccordionTrigger className="m-0 p-0 border-b-0">
             {" "}
             <Button
-              className="w-full gap-1 flex justify-start"
-              variant="primary"
+            variant="ghost"
+
+              className="w-full gap-1 flex justify-start bg-transparent text-primary-white/80"
+              size="sm"
+
             >
-              <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
+              <Icon icon="akar-icons:chevron-down" className="w-4 h-4 mr-1" />
               <p className="text-primary-white/80">Files</p>
             </Button>
           </AccordionTrigger>
-          <AccordionContent className="flex w-full flex-col py-2 text-xs gap-2">
+          <AccordionContent className="flex w-full pl-4 flex-col py-2 text-xs gap-2">
             <SideLink
-              text={"Dashboard"}
+              text={"Gallery"}
               icon={
                 <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
               }
@@ -68,7 +71,7 @@ const FoldMenu: React.FC<{
               href={"/dash"}
             />
             <SideLink
-              text={"Dashboard"}
+              text={"Pastes"}
               icon={
                 <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
               }
@@ -76,7 +79,7 @@ const FoldMenu: React.FC<{
               href={"/dash"}
             />
             <SideLink
-              text={"Dashboard"}
+              text={"Collections"}
               icon={
                 <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
               }

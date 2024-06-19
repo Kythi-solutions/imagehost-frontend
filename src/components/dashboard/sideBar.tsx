@@ -201,7 +201,7 @@ const Sidebar: React.FC<{
           className="absolute max-w-xs z-10 h-24 w-full rounded-b-lg opacity-20  md:max-w-md z-0"
         />
 
-        <div className="ml-4 z-50 justify-between pr-3 flex items-center h-24">
+        <div className="ml-4 justify-between pr-3 flex items-center h-24">
           <div className="flex items-center justify-center gap-3">
             <img
               src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
@@ -213,7 +213,7 @@ const Sidebar: React.FC<{
               <p className="truncate text-xs text-primary">@bbrooklyn</p>
             </div>
           </div>
-          <div>
+          <div className="z-50">
             <SideBarDropdown />
           </div>
         </div>
