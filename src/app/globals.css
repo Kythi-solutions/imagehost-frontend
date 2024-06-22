@@ -108,6 +108,9 @@
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgba(255,255,255,0.08);
   }
+  .card {
+    @apply border-accent w-full bg-background-light border-1.5 p-4 rounded-md
+  }
 }
 
 .glow {

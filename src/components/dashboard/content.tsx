@@ -5,7 +5,7 @@ import {ReactNode} from "react";
 import { Button } from "../shadcn/button";
 
 const Content = ({ children }: { children: ReactNode }) => {
-  return <div className="bg-background-light w-full rounded-sm p-6  ">
+  return <div className="gap-6 flex w-full rounded-sm">
     {children}
   </div>;
 };

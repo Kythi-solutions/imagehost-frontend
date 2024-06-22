@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -51,21 +52,18 @@ const FoldMenu: React.FC<{
     <>
       <Accordion type="single" collapsible className="w-full" defaultValue={active ? "item-1" : "none"}>
         <AccordionItem value="item-1" className="w-full border-0">
-          <AccordionTrigger className="m-0 p-0 hover:no-underline ">
+          <AccordionTrigger className="m-0 hover:bg-accent rounded-md  p-0 hover:no-underline w-full active:bg-accent gap-1 flex justify-between bg-transparent text-primary-white/80">
             {" "}
-            <Button
-              variant="ghost"
-              className="w-full active:bg-accent gap-1 flex justify-between bg-transparent text-primary-white/80"
-              size="sm"
-            >
+<div className="flex h-8  px-3 text-xs w-full gap-1 justify-start items-center anim whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+
               <div className="flex w-full justify-start">
               <Icon icon="lucide:file" className="w-4 h-4 mr-2" />
               <p className="text-primary-white/80">Files</p>
 
               </div>
               <Icon icon="akar-icons:chevron-down" className="w-4 h-4 mr-1 text-white/30" />
-              
-            </Button>
+</div>
+ 
           </AccordionTrigger>
           <AccordionContent className="flex w-full pl-4 flex-col py-2 text-xs gap-2 ">
             <SideLink
