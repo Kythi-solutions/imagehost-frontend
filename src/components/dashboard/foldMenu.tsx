@@ -20,9 +20,9 @@ const SideLink: React.FC<{
     <Button
       size="sm"
       //@ts-ignore
-      variant="primary"
+      variant={props.active ? "primary" : "ghost"}
       className={`w-full gap-1 flex justify-start ${
-        props.active && "bg-background-lighter"
+        props.active && "bg-accent"
       }`}
     >
       {props.icon}
@@ -39,52 +39,58 @@ const FoldMenu: React.FC<{
     | "domains"
     | "referrals"
     | "support"
-    | "admin";
-  subSection?: "gallery" | "pastes" | "collections";
+    | "admin"
+    | "gallery"
+    | "pastes"
+    | "collections";
 }> = (props) => {
   const [checked, setChecked] = React.useState(false);
+  const active = props.location == "gallery" || props.location == "pastes" || props.location == "collections";
 
   return (
     <>
-      <Accordion type="single" collapsible className="w-full border-b-0">
-        <AccordionItem value="item-1" className="w-full">
-          <AccordionTrigger className="m-0 p-0 border-b-0">
+      <Accordion type="single" collapsible className="w-full" defaultValue={active ? "item-1" : "none"}>
+        <AccordionItem value="item-1" className="w-full border-0">
+          <AccordionTrigger className="m-0 p-0 hover:no-underline ">
             {" "}
             <Button
-            variant="ghost"
-
-              className="w-full gap-1 flex justify-start bg-transparent text-primary-white/80"
+              variant="ghost"
+              className="w-full active:bg-accent gap-1 flex justify-between bg-transparent text-primary-white/80"
               size="sm"
-
             >
-              <Icon icon="akar-icons:chevron-down" className="w-4 h-4 mr-1" />
+              <div className="flex w-full justify-start">
+              <Icon icon="lucide:file" className="w-4 h-4 mr-2" />
               <p className="text-primary-white/80">Files</p>
+
+              </div>
+              <Icon icon="akar-icons:chevron-down" className="w-4 h-4 mr-1 text-white/30" />
+              
             </Button>
           </AccordionTrigger>
-          <AccordionContent className="flex w-full pl-4 flex-col py-2 text-xs gap-2">
+          <AccordionContent className="flex w-full pl-4 flex-col py-2 text-xs gap-2 ">
             <SideLink
               text={"Gallery"}
               icon={
-                <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
+                <Icon icon="lucide:images" className="w-4 h-4 mr-1" />
               }
-              active={props.location == "dash"}
-              href={"/dash"}
+              active={props.location == "gallery"}
+              href={"/dashboard/gallery"}
             />
             <SideLink
               text={"Pastes"}
               icon={
-                <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
+                <Icon icon="lucide:clipboard-list" className="w-4 h-4 mr-1" />
               }
-              active={props.location == "dash"}
-              href={"/dash"}
+              active={props.location == "pastes"}
+              href={"/dashboard/pastes"}
             />
             <SideLink
               text={"Collections"}
               icon={
-                <Icon icon="akar-icons:dashboard" className="w-4 h-4 mr-1" />
+                <Icon icon="lucide:group" className="w-4 h-4 mr-1" />
               }
-              active={props.location == "dash"}
-              href={"/dash"}
+              active={props.location == "collections"}
+              href={"/dashboard/collections"}
             />
           </AccordionContent>
         </AccordionItem>

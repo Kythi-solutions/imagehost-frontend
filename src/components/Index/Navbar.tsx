@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Theme from "@/components/theme-toggle";
 import { Button } from "../shadcn/button";
-
+import Image from "next/image";
+import Logo from "./k1-single.png";
 type NavLinkProps = {
   text: string;
   href: string;
@@ -46,8 +47,8 @@ export default function Navbar() {
     >
       <div className="w-full items-center mx-auto flex px-12">
         <Link legacyBehavior href="/">
-          <a className="hidden h-8 w-8 cursor-pointer sm:flex bg-black dark:p-0 p-2 items-center rounded-full">
-            <img src="/logo.svg" alt="logo" className="dark:bg-transparent" />
+          <a className="hidden  cursor-pointer sm:flex bg-black dark:p-0 p-2 items-center rounded-full">
+            <Image src={Logo} alt="logo" className="dark:bg-transparent h-8 w-8"/>
           </a>
         </Link>
         <div className="flex w-full items-center gap-5 md:justify-end justify-center">

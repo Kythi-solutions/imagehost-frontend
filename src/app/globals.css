@@ -91,6 +91,23 @@
   .anim {
     @apply duration-300 transition-all;
   }
+  .scrollbar::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    display: none;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.04);
+    border-radius: 50px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255,255,255,0.08);
+  }
 }
 
 .glow {
