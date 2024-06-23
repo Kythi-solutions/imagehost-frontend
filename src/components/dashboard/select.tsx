@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react"
+import * as React from "react";
 
 import {
   Select,
@@ -9,22 +9,27 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../shadcn/select"
+} from "../shadcn/select";
 
 export default function SelectMenu() {
   return (
     <Select>
-      <SelectTrigger className="w-full p-5 ">
-        <SelectValue placeholder="Select a fruit" />
+      <SelectTrigger className="w-full p-4 ">
+        <SelectValue placeholder="None Selected" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Sharex</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          <SelectItem value="ShareX">
+            ShareX <span className="text-xs text-gray-300">(Windows)</span>
+          </SelectItem>
+          <SelectItem value="grapes">
+            ShareNix <span className="text-xs text-gray-300">(Linux)</span>
+          </SelectItem>
+          <SelectItem value="pineapple">
+            Magic Cap <span className="text-xs text-gray-300">(MacOS)</span>
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }
