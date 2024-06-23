@@ -31,7 +31,6 @@ const config = {
           light: "rgba(var(--background-light))",
           lighter: "rgba(var(--background-lighter))",
         },
-        
 
         backgroundSecondary: "hsl(var(--backgroundSecondary))",
         secondaryLighter: "rgba(var(--secondaryLighter))",
@@ -41,7 +40,7 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          blue: "hsl(var(--primary-blue))",
+          blue: "rgba(var(--primary-blue))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

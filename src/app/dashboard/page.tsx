@@ -4,6 +4,7 @@ import { Button } from "@/components/shadcn/button";
 import Sidebar from "@/components/dashboard/sideBar";
 import Content from "@/components/dashboard/content";
 import Select from "@/components/dashboard/select";
+import { Separator } from "@/components/shadcn/separator";
 
 export default function Dashboard() {
   return (
@@ -84,11 +85,52 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex gap-6 h-full">
-            <div className="card max-w-6xl !h-full"></div>
+            <div className="card max-w-6xl !h-full !p-6">
+              <h1 className="font-semibold text-lg">Recent Activity</h1>
+              <Separator className="mt-3" />
+              <div className="space-y-5 mt-6">
+                <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src="https://cdn.nest.rip/uploads/7d679589-32c6-4006-b5e4-9d38b9d7b05a.png"
+                    alt=""
+                  />
+                  <div>
+                    <p className=" font-semibold">File uploaded</p>
+                    <p className="text-xs">8 feb 2023, 01:00 am</p>
+                  </div>
+                </div>
+                <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src="https://cdn.nest.rip/uploads/7d679589-32c6-4006-b5e4-9d38b9d7b05a.png"
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-sm font-semibold">File uploaded</p>
+                    <p className="text-xs">8 feb 2023, 01:00 am</p>
+                  </div>
+                </div>
+                <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src="https://cdn.nest.rip/uploads/7d679589-32c6-4006-b5e4-9d38b9d7b05a.png"
+                    alt=""
+                  />
+                  <div>
+                    <p className=" font-semibold">File uploaded</p>
+                    <p className="text-xs">8 feb 2023, 01:00 am</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="card max-w-xl !h-full !p-6">
               <h1 className="font-semibold text-lg">
                 Upload your files to kythi
               </h1>
+              <div className="flex justify-center cursor-pointer h-full rounded-md border-2 border-dashed group hover:border-primary-blue hover:bg-primary-blue/10 anim">
+                e
+              </div>
             </div>
           </div>
         </Content>
