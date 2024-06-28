@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-
+import { Icon } from "@iconify/react";
 import {
   Select,
   SelectContent,
@@ -20,12 +20,14 @@ export default function SelectMenu() {
       <SelectContent>
         <SelectGroup>
           <SelectItem value="ShareX">
-            ShareX <span className="text-xs text-gray-300">(Windows)</span>
+            <Icon icon="simple-icons:sharex" className="mr-2 inline text-xs" />
+           ShareX <span className="text-xs text-gray-300 ">(Windows)</span>
+
           </SelectItem>
-          <SelectItem value="grapes">
+          <SelectItem value="ShareNix">
             ShareNix <span className="text-xs text-gray-300">(Linux)</span>
           </SelectItem>
-          <SelectItem value="pineapple">
+          <SelectItem value="MagicCap">
             Magic Cap <span className="text-xs text-gray-300">(MacOS)</span>
           </SelectItem>
         </SelectGroup>
