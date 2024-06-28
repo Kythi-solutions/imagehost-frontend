@@ -35,6 +35,9 @@
 
     --radius: 0.5rem;
     --button: 2, 95, 253, 1;
+
+    --increase: 108, 235, 99;
+    --decrease: 235, 99, 99;
   }
 
   .dark {
@@ -72,6 +75,10 @@
     --border: 240 3.7% 15.9%;
     --input: 222 21% 7%;
     --bordinput: 222 30% 30%;
+    --increase: 108, 235, 99;
+    --decrease: 235, 99, 99;
+
+
   }
 }
 

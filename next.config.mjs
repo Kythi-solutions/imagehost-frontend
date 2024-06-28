@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.nest.rip",
+        hostname: "images.unsplash.com",
+
         // path: "/uploads/",
       },
     ],

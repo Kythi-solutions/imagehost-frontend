@@ -1,5 +1,8 @@
 import { Icon } from "@iconify/react";
 import { Button } from "../shadcn/button";
+import { Skeleton } from "../shadcn/skeleton";
+import { Badge } from "../shadcn/badge"
+
 import {
   Select,
   SelectContent,
@@ -37,7 +40,7 @@ const StatisticCard = ({
   }
   return (
     <div
-      className={`card w-full relative ${glow}`}
+      className={`card w-full relative flex flex-col justify-between ${glow}`}
     >
       <div className="flex justify-between">
         <div className="flex items-center gap-x-2 leading-none">
@@ -49,7 +52,7 @@ const StatisticCard = ({
         <div>
           {timeline == true ? (
             <Select>
-              <SelectTrigger className="border-none p-0 m-0">
+              <SelectTrigger className="border-none p-0 m-0 h-full">
                 <SelectValue
                   className="!text-white/40 select-value"
                   placeholder="Week"
@@ -67,10 +70,12 @@ const StatisticCard = ({
           )}
         </div>
       </div>
-      <div className="flex mt-2 items-center">
-        <div className="text-lg font-bold w-full">{value}</div>
+      <div className="flex items-center h-full pt-2">
+        
+        <div className="text-xl font-bold w-full flex items-center gap-x-4">{value}<Badge>+12%</Badge></div>
         {/* Glow bottom right */}
       </div>
+      
       {/*<div className=" w-10 h-10 transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>*/}
     </div>
   );

@@ -36,6 +36,8 @@ const config = {
         secondaryLighter: "rgba(var(--secondaryLighter))",
         secondaryLighterHover: "rgba(var(--secondaryLighterHover))",
         secondaryAlternative: "rgba(var(--secondaryAlternative))",
+        increase: "rgb(var(--increase))",
+        decrease: "rgb(var(--decrease))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -66,6 +68,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
       },
       borderWidth: {
         1.5: "1.5px",
