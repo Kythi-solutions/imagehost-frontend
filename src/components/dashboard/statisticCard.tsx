@@ -15,28 +15,24 @@ interface StatisticCardProps {
   title: string;
   value: React.ReactNode;
   icon: React.ReactNode;
-  increase?: boolean;
   timeline?: boolean;
+  growth?: number;
 }
 
 const StatisticCard = ({
   title,
   value,
   icon,
-  increase = undefined, // Default value for increase
   timeline = true, // Default value for timeline
+  growth = 0, // Default value for growth
 }: StatisticCardProps) => {
   let glow;
-  switch (increase) {
-    case true:
-      glow = "increase";
-      break;
-    case false:
-      glow = "decrease";
-      break;
-    default:
-      glow = "base";
-      break;
+  if (growth > 0) {
+    glow = "increase";
+  } else if (growth < 0) {
+    glow = "decrease";
+  } else {
+    glow = "base";
   }
   return (
     <div
@@ -72,7 +68,7 @@ const StatisticCard = ({
       </div>
       <div className="flex items-center h-full pt-2">
         
-        <div className="text-xl font-bold w-full flex items-center gap-x-4">{value}<Badge>+12%</Badge></div>
+        <div className="text-xl font-bold w-full flex items-center gap-x-4">{value}{growth != 0 ? <Badge className={growth > 0 ? "badge_increase": "badge_decrease"}>{growth > 0 ? "+": ""}{growth}%</Badge> : ""}</div>
         {/* Glow bottom right */}
       </div>
       

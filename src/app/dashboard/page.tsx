@@ -8,7 +8,9 @@ import { Icon } from "@iconify/react";
 import ImageCapture from "@/components/dashboard/select";
 import StatisticCard from "@/components/dashboard/statisticCard";
 import { Progress } from "@/components/shadcn/progress";
+import Activity from "@/components/dashboard/activity";
 import Image from "next/image";
+
 export default function Dashboard() {
   return (
     <>
@@ -23,8 +25,7 @@ export default function Dashboard() {
                 <StatisticCard
                   title="Uploads"
                   value="1,200"
-                  increase={false}
-                  
+                  growth={-1.2}
                   icon={
                     <Icon
                       icon="lucide:cloud-upload"
@@ -36,7 +37,7 @@ export default function Dashboard() {
                   title="Storage"
                   value={
                     <div className="w-full h-full flex  flex-col px-1">
-                      <Progress value={60} className="mt-3"/>
+                      <Progress value={60} className="mt-3" />
                       <p className="text-xs mt-4">
                         1,200/<span className="text-white/50">5000</span>
                       </p>
@@ -54,7 +55,7 @@ export default function Dashboard() {
                 <StatisticCard
                   title="Uploads"
                   value="1,200"
-                  increase={true}
+                  growth={1.2}
                   icon={
                     <Icon
                       icon="lucide:cloud-upload"
@@ -124,49 +125,29 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex gap-6 h-full">
-            <div className="card max-w-6xl !h-full !p-6">
+            <div className="card max-w-6xl !h-full !p-6 ">
               <h1 className="font-semibold text-lg">Recent Activity</h1>
               <Separator className="mt-3" />
-              <div className="space-y-5 mt-6">
-              <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
-                  <Image
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1719530910202-9f791d646ee6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                    width={100}
-                    height={40}
-                  />
-                  <div>
-                    <p className="text-sm font-semibold">File uploaded</p>
-                    <p className="text-xs">8 feb 2023, 01:00 am</p>
-                  </div>
-                </div>
-                <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
-                  <Image
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1719216324207-3b9727413913?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                    width={100}
-                    height={40}
-                  />
-                  <div>
-                    <p className="text-sm font-semibold">File uploaded</p>
-                    <p className="text-xs">8 feb 2023, 01:00 am</p>
-                  </div>
-                </div>
-                <div className="text-sm items-center flex gap-2 border-1.5 rounded-lg p-2 bg-background-lighter">
-                  <Image
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1719216324034-2910e4347532?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
-                  <div>
-                    <p className=" font-semibold">File uploaded</p>
-                    <p className="text-xs">8 feb 2023, 01:00 am</p>
-                  </div>
-                </div>
+              <div className="space-y-5 mt-6 h-full flex flex-col gap-1">
+                <Activity
+                  title="ShareX File Upload"
+                  thumbnailUrl="https://images.unsplash.com/photo-1719530910202-9f791d646ee6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  timestamp={new Date()}
+                  href="/"
+                />
+                <Activity
+                  title="Login"
+                  thumbnailUrl="https://images.unsplash.com/photo-1719216324207-3b9727413913?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  timestamp={new Date()}
+                  href="/"
+                />
+                <Activity
+                  title="File Deleted"
+                  thumbnailUrl="https://images.unsplash.com/photo-1719216324034-2910e4347532?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  timestamp={new Date()}
+                  href="/"
+                />
+
               </div>
             </div>
             <div className="card max-w-xl !h-full !p-6">
