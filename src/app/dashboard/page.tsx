@@ -10,11 +10,56 @@ import StatisticCard from "@/components/dashboard/statisticCard";
 import { Progress } from "@/components/shadcn/progress";
 import Activity from "@/components/dashboard/activity";
 import Image from "next/image";
+import { BarChart, Bar, ResponsiveContainer } from "recharts";
 
 export default function Dashboard() {
+  const data = [
+    {
+      name: "Page A",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "Page B",
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: "Page C",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "Page D",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: "Page E",
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: "Page F",
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: "Page G",
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
   return (
     <>
-      <div className="flex h-screen p-9 gap-x-6">
+      <div className="flex h-screen  p-9 gap-x-6">
         <Sidebar location="dash" />
         <Content>
           <div className="flex gap-6">
@@ -65,8 +110,10 @@ export default function Dashboard() {
                 />
               </div>
               {/* Giraffe */}
-              <div className="card w-full max-w-6xl grid items-center text-7xl justify-center h-80">
-                Jiraffe
+              <div className="card w-full max-w-6xl text-7xl justify-center h-80">
+                {/* <BarChart width={900} height={500} data={data}>
+                  <Bar dataKey="uv" fill="#8884d8" />
+                </BarChart> */}
               </div>
             </div>
             <div className="card max-w-xl !p-6 relative">
@@ -124,11 +171,11 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="flex gap-6 h-full">
-            <div className="card max-w-6xl !h-full !p-6 ">
+          <div className="flex gap-6 h-full overflow-hidden">
+            <div className="card max-w-6xl !p-6 flex flex-col !h-full ">
               <h1 className="font-semibold text-lg">Recent Activity</h1>
               <Separator className="mt-3" />
-              <div className="space-y-5 mt-6 h-full flex flex-col gap-1">
+              <div className="space-y-5 flex rounded-lg flex-col  max-h-full overflow-y-scroll scrollbar">
                 <Activity
                   title="ShareX File Upload"
                   thumbnailUrl="https://images.unsplash.com/photo-1719530910202-9f791d646ee6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -147,7 +194,12 @@ export default function Dashboard() {
                   timestamp={new Date()}
                   href="/"
                 />
-
+                <Activity
+                  title="File Deleted"
+                  thumbnailUrl="https://images.unsplash.com/photo-1719216324034-2910e4347532?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  timestamp={new Date()}
+                  href="/"
+                />
               </div>
             </div>
             <div className="card max-w-xl !h-full !p-6">

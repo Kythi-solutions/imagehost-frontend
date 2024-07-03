@@ -77,8 +77,6 @@
     --bordinput: 222 30% 30%;
     --increase: 108, 235, 99;
     --decrease: 235, 99, 99;
-
-
   }
 }
 
@@ -90,7 +88,6 @@
   body {
     @apply bg-background text-foreground;
   }
-
 }
 
 @layer utilities {
@@ -118,7 +115,6 @@
 
   .card {
     @apply border-accent w-full bg-background-light border-1.5 p-4 rounded-md overflow-hidden;
-
   }
 }
 
@@ -126,25 +122,27 @@
   -webkit-tap-highlight-color: transparent;
   -webkit-text-decoration: none;
   text-decoration: none;
-  background: linear-gradient(88.93deg,
-      rgb(234, 234, 234) 0.76%,
-      rgb(192, 38, 211) 14.6%,
-      rgb(99, 167, 235) 87.89%,
-      rgb(10, 10, 10) 99.17%);
+  background: linear-gradient(
+    88.93deg,
+    rgb(234, 234, 234) 0.76%,
+    rgb(192, 38, 211) 14.6%,
+    rgb(99, 167, 235) 87.89%,
+    rgb(10, 10, 10) 99.17%
+  );
   -webkit-filter: blur(120px);
   filter: blur(120px);
 }
 
-
-
 :root {
   --increase: rgb(108, 235, 99);
   --decrease: rgb(235, 99, 99);
-  --base: linear-gradient(88.93deg,
-  rgb(234, 234, 234) 0.76%,
-  rgb(192, 38, 211) 14.6%,
-  rgb(99, 167, 235) 87.89%,
-  rgb(10, 10, 10) 99.17%);
+  --base: linear-gradient(
+    88.93deg,
+    rgb(234, 234, 234) 0.76%,
+    rgb(192, 38, 211) 14.6%,
+    rgb(99, 167, 235) 87.89%,
+    rgb(10, 10, 10) 99.17%
+  );
   --glow_width: 25%;
   --glow_height: 30%;
   --card_blur: blur(50px);
@@ -159,7 +157,6 @@
   width: var(--glow_width);
   filter: var(--card_blur);
   -webkit-filter: var(--card_blur);
-
 }
 .decrease::after {
   position: absolute;
@@ -192,15 +189,16 @@
   z-index: -10;
   width: 100%;
   height: 50%;
-  background: linear-gradient(88.93deg,
-  rgb(234, 234, 234) 0.76%,
-  rgb(192, 38, 211) 14.6%,
-  rgb(99, 167, 235) 87.89%,
-  rgb(10, 10, 10) 99.17%);
+  background: linear-gradient(
+    88.93deg,
+    rgb(234, 234, 234) 0.76%,
+    rgb(192, 38, 211) 14.6%,
+    rgb(99, 167, 235) 87.89%,
+    rgb(10, 10, 10) 99.17%
+  );
   -webkit-filter: blur(120px);
   filter: blur(120px);
   overflow: hidden;
-
 }
 .darken_overlay::after {
   position: absolute;
@@ -210,7 +208,7 @@
   z-index: -10;
   width: 100%;
   height: 100%;
-  background:rgba(27, 28, 33, 0.5);
+  background: rgba(27, 28, 33, 0.5);
   overflow: hidden;
   backdrop-filter: blur(3px);
 }

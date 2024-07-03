@@ -17,25 +17,25 @@ const Activity = ({
 }: ActivityProps) => {
   return (
     <>
-    <Link href={href}>
-      <div className="text-sm items-center flex border-1.5 rounded-lg bg-background-lighter overflow-hidden">
-        <Image
-          className="h-20 w-20"
-          src={thumbnailUrl}
-          alt={`Thumbnail for ${title}`}
-          width={100}
-          height={100}
-        />
-        <div className="w-full flex justify-between items-center px-6">
-          <div>
-            <p className="text-sm font-semibold">{title}</p>
-            <p className="text-xs text-white/60">{`${timestamp.toLocaleDateString()} - ${timestamp.toLocaleTimeString()}`}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            {/*<Icon icon="lucide:trash" className="h-5 w-5" />*/}
+      <Link href={href}>
+        <div className="text-sm items-center flex border-1.5 rounded-lg bg-background-lighter overflow-hidden">
+          <Image
+            className="h-20 w-20"
+            src={thumbnailUrl}
+            alt={`Thumbnail for ${title}`}
+            width={100}
+            height={100}
+          />
+          <div className="w-full flex justify-between items-center px-6">
+            <div>
+              <p className="text-sm font-semibold">{title}</p>
+              <p className="text-xs text-white/60">{`${timestamp.toLocaleDateString()} - ${timestamp.toLocaleTimeString()}`}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              {/*<Icon icon="lucide:trash" className="h-5 w-5" />*/}
+            </div>
           </div>
         </div>
-      </div>
       </Link>
     </>
   );

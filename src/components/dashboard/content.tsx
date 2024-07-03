@@ -5,7 +5,9 @@ import { ReactNode } from "react";
 import { Button } from "../shadcn/button";
 
 const Content = ({ children }: { children: ReactNode }) => {
-  return <div className="w-full flex gap-6 flex-col max-h-screen">{children}</div>;
+  return (
+    <div className="w-full flex gap-6 flex-col max-h-screen">{children}</div>
+  );
 };
 
 export default Content;
