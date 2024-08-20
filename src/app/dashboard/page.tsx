@@ -10,53 +10,52 @@ import StatisticCard from "@/components/dashboard/statisticCard";
 import { Progress } from "@/components/shadcn/progress";
 import Activity from "@/components/dashboard/activity";
 import Image from "next/image";
-import { BarChart, Bar, ResponsiveContainer } from "recharts";
+import { TrendingUp } from "lucide-react";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/shadcn/card";
+
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/shadcn/chart";
+
+const chartData = [
+  { month: "January", uploads: 186, pastes: 80 },
+  { month: "January", uploads: 186, pastes: 80 },
+  { month: "February", uploads: 305, pastes: 200 },
+  { month: "March", uploads: 237, pastes: 120 },
+  { month: "April", uploads: 73, pastes: 190 },
+  { month: "May", uploads: 209, pastes: 130 },
+  { month: "June", uploads: 214, pastes: 140 },
+  { month: "July", uploads: 214, pastes: 140 },
+  { month: "August", uploads: 214, pastes: 140 },
+  { month: "September", uploads: 214, pastes: 140 },
+  { month: "November", uploads: 214, pastes: 140 },
+  { month: "December", uploads: 214, pastes: 140 },
+];
+
+const chartConfig = {
+  uploads: {
+    label: "Uploads",
+    color: "hsl(var(--chart-5))",
+  },
+  pastes: {
+    label: "Pastes",
+    color: "hsl(var(--chart-4))",
+  },
+} satisfies ChartConfig;
 
 export default function Dashboard() {
-  const data = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
   return (
     <>
       <div className="flex h-screen  p-9 gap-x-6">
@@ -111,11 +110,82 @@ export default function Dashboard() {
               </div>
               {/* Giraffe */}
               <div className="card w-full max-w-6xl text-7xl justify-center h-80">
-                {/* <BarChart width={900} height={500} data={data}>
-                  <Bar dataKey="uv" fill="#8884d8" />
-                </BarChart> */}
+                <ChartContainer
+                  config={chartConfig}
+                  className="h-[300px] w-full"
+                >
+                  <AreaChart accessibilityLayer data={chartData}>
+                    <CartesianGrid vertical={false} />
+                    <XAxis
+                      dataKey="month"
+                      tickLine={false}
+                      axisLine={false}
+                      tickMargin={8}
+                      tickFormatter={(value) => value.slice(0, 3)}
+                    />
+                    <ChartTooltip
+                      cursor={false}
+                      content={<ChartTooltipContent />}
+                    />
+                    <defs>
+                      <linearGradient
+                        id="filluploads"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="5%"
+                          stopColor="var(--color-uploads)"
+                          stopOpacity={0.8}
+                        />
+                        <stop
+                          offset="95%"
+                          stopColor="var(--color-uploads)"
+                          stopOpacity={0.1}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="fillpastes"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="5%"
+                          stopColor="var(--color-pastes)"
+                          stopOpacity={0.8}
+                        />
+                        <stop
+                          offset="95%"
+                          stopColor="var(--color-pastes)"
+                          stopOpacity={0.1}
+                        />
+                      </linearGradient>
+                    </defs>
+                    <Area
+                      dataKey="pastes"
+                      type="natural"
+                      fill="url(#fillpastes)"
+                      fillOpacity={0.4}
+                      stroke="var(--color-pastes)"
+                      stackId="a"
+                    />
+                    <Area
+                      dataKey="uploads"
+                      type="natural"
+                      fill="url(#filluploads)"
+                      fillOpacity={0.4}
+                      stroke="var(--color-uploads)"
+                      stackId="a"
+                    />
+                  </AreaChart>
+                </ChartContainer>
               </div>
             </div>
+            {/* Config */}
             <div className="card max-w-xl !p-6 relative">
               <div className="mt-8 text-sm absolute right-4 top-0">
                 <Icon
@@ -125,7 +195,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <h1 className="font-semibold text-lg">Configurations</h1>
-                <div className="mt-8 text-sm">
+                <div className="mt-3 text-sm">
                   <p className="mb-4">
                     1. Select your image capturing software
                   </p>
@@ -135,7 +205,7 @@ export default function Dashboard() {
                   <p className="mb-4 0">
                     2. Download your softwares configuration file
                   </p>
-                  <div className="font-semibold  cursor-pointer flex h-10 w-full items-center justify-between whitespace-nowrap rounded-md border border-accent bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1">
+                  <div className="font-semibold  cursor-not-allowed  flex h-10 w-full items-center justify-between whitespace-nowrap rounded-md border border-accent bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1">
                     <p className=" flex items-center">
                       {" "}
                       <Icon
@@ -152,7 +222,7 @@ export default function Dashboard() {
                     3. Watch our video on how to correctly setup your
                     configuration
                   </p>
-                  <div className="font-semibold  cursor-pointer flex h-10 w-full items-center justify-between whitespace-nowrap rounded-md border border-accent bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1">
+                  <div className="font-semibold cursor-not-allowed flex h-10 w-full items-center justify-between whitespace-nowrap rounded-md border border-accent bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1">
                     <p className="flex items-center">
                       <Icon
                         icon="lucide:youtube"
@@ -174,6 +244,10 @@ export default function Dashboard() {
           <div className="flex gap-6 h-full overflow-hidden">
             <div className="card max-w-6xl !p-6 flex flex-col !h-full ">
               <h1 className="font-semibold text-lg">Recent Activity</h1>
+              <p className="text-sm text-gray-300">
+                View your recent activity on kythi. This includes file uploads,
+                logins, and file deletions.
+              </p>
               <Separator className="mt-3" />
               <div className="space-y-5 flex rounded-lg flex-col  max-h-full overflow-y-scroll scrollbar">
                 <Activity
@@ -203,11 +277,31 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="card max-w-xl !h-full !p-6">
-              <h1 className="font-semibold text-lg">
-                Upload your files to kythi
-              </h1>
-              <div className="flex justify-center cursor-pointer h-full rounded-md border-2 border-dashed group hover:border-primary-blue hover:bg-primary-blue/10 anim">
-                e
+              <h1 className="font-semibold text-lg">Upload a file</h1>
+              <p className="text-sm text-gray-300">
+                Upload your files to kythi and be able to swiftly share them
+                with ease.
+              </p>
+              <div className="max-w-xl h-full flex pb-10 pt-4">
+                <label className="flex justify-center w-full px-4 transition  border border-gray-400/50 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
+                  <span className="flex items-center space-x-2 text-sm max-w-[250px] text-center">
+                    <div className="flex flex-col gap-2 items-center">
+                      <Icon
+                        icon="lucide:image-plus"
+                        className="w-8 h-8 text-purple-400/50"
+                      />
+                      <span className="font-medium text-gray-300">
+                        Drop in a file or,
+                        <span className="text-purple-400 ">
+                          &nbsp;browse local files&nbsp;
+                        </span>
+                        to upload.
+                      </span>
+                    </div>
+                  </span>
+
+                  <input type="file" name="file_upload" className="hidden" />
+                </label>
               </div>
             </div>
           </div>

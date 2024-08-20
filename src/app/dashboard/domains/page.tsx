@@ -6,7 +6,7 @@ import Content from "@/components/dashboard/content";
 export default function Domains() {
   return (
     <>
-      <div className="flex h-screen p-6 gap-x-4">
+      <div className="flex h-screen p-9 gap-x-6">
         <Sidebar location="domains" />
         <Content>
           <h1 className="text-xl font-semibold">Domains</h1>
