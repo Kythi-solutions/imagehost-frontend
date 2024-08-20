@@ -117,16 +117,7 @@ const Sidebar: React.FC<{
         />
       </div>
       <div className="mt-auto w-full flex justify-center border-t-2 border-background-lighter relative sidebar_profile_glow">
-        {/*
-        <Image
-          alt="Backdrop"
-          src="https://images.unsplash.com/photo-1548567117-02328f050eaa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          className="absolute max-w-xs h-24 w-full rounded-b-md  md:max-w-md z-10"
-          width={100}
-          height={100}
-        />
-*/}
-        <div className="w-full h-24 z-20 p-3 bg-background-light ">
+        <div className="w-full h-24 z-20 p-3 bg-background-light sidebar_profile_glow">
           <div className="w-full h-full justify-between flex items-center  ">
             <div className="flex items-center justify-center gap-3 rounded-sm p-3 relative overflow-hidden">
               <Image
@@ -138,9 +129,7 @@ const Sidebar: React.FC<{
               />
               <div className="max-w-[120px] ">
                 <p className="truncate text-primary text-sm ">Display Name</p>
-                <p className="truncate text-xs text-primary">
-                  @username
-                </p>
+                <p className="truncate text-xs text-primary">@username</p>
               </div>
             </div>
             <div className="z-50">
