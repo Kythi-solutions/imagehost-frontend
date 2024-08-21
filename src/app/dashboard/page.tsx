@@ -12,6 +12,14 @@ import Activity from "@/components/dashboard/activity";
 import Image from "next/image";
 import { TrendingUp } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/shadcn/dropdown-menu";
 
 import {
   Card,
@@ -188,10 +196,21 @@ export default function Dashboard() {
             {/* Config */}
             <div className="card max-w-xl !p-6 relative">
               <div className="mt-8 text-sm absolute right-4 top-0">
-                <Icon
-                  icon="lucide:info"
-                  className="mr-3 h-5 w-5 leading-none text-white/60"
-                />
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Icon
+                      icon="lucide:info"
+                      className="mr-3 h-5 w-5 leading-none text-white/60"
+                    />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className=" dark:bg-background-light">
+                    <DropdownMenuLabel>
+                      {/* Not sure what to put here for now. */}
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {/* ss */}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
               <div>
                 <h1 className="font-semibold text-lg">Configurations</h1>
