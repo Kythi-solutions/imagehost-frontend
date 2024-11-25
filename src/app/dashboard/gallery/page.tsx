@@ -67,14 +67,144 @@ const images = [
     size: "69.69mb",
     url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
   },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/1e566c6c-2c2a-475f-8873-9fd4b173ffb4.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
 ];
 
 export default function Gallery() {
   return (
     <>
-      <div className="flex h-screen p-9 gap-x-6">
+      <div className="flex p-9 gap-x-6 h-screen">
         <Sidebar location="gallery" />
-        <Content>
+        <div className="flex flex-col w-full gap-12 ">
           <div className="gap-2 flex flex-col w-fit justify-center">
             <h1 className="text-xl font-semibold">My Gallery</h1>
             <p className="text-sm">
@@ -82,23 +212,17 @@ export default function Gallery() {
             </p>
             <Input className="mt-2 " placeholder="Search for a file" />
           </div>
-          <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full">
+          <div className="grid hide-scroll grid-cols-5 gap-5 gap-y-10 w-full overflow-y-auto ">
             {images.map((image, index) => (
               <motion.div
                 key={index}
-                className="card h-72 max-w-sm w-full !p-3 relative"
+                className="max-w-sm w-full relative"
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
               >
                 <div className="relative h-full w-full">
-                  <div className="absolute inset-0 flex flex-col">
-                    <div className="flex items-center justify-between mb-4">
-                      <h1 className="font-semibold text-sm">{image.name}</h1>
-                      <p className="text-xs font-bold text-white/60">
-                        {image.size}
-                      </p>
-                    </div>
+                  <div className=" inset-0 flex flex-col">
                     <motion.div className="relative rounded-lg">
                       <img
                         className="h-56 w-full object-cover rounded-lg"
@@ -196,7 +320,7 @@ export default function Gallery() {
               </motion.div>
             ))}
           </div>
-          <Pagination className="mt-auto">
+          {/* <Pagination className="mt-auto">
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious href="#" />
@@ -219,8 +343,8 @@ export default function Gallery() {
                 <PaginationNext href="#" />
               </PaginationItem>
             </PaginationContent>
-          </Pagination>
-        </Content>
+          </Pagination> */}
+        </div>
       </div>
     </>
   );
