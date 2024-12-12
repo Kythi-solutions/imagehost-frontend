@@ -66,14 +66,14 @@ const chartConfig = {
 export default function Dashboard() {
   return (
     <>
-      <div className="flex h-screen  p-9 gap-x-6">
+      <div className="flex h-screen p-9 gap-x-6">
         <Sidebar location="dash" />
         <Content>
-          <div className="flex gap-6">
+          <div className="flex gap-6 w-full">
             {/* Graph and Statistics */}
-            <div className="space-y-6 max-w-6xl w-full">
+            <div className="space-y-6 max-w-7xl w-full">
               {/* Statistic (top) */}
-              <div className="flex w-full  max-w-6xl gap-x-6">
+              <div className="flex w-full  max-w-7xl gap-x-6">
                 <StatisticCard
                   title="Uploads"
                   value="1,200"
@@ -117,7 +117,7 @@ export default function Dashboard() {
                 />
               </div>
               {/* Giraffe */}
-              <div className="card w-full max-w-6xl text-7xl justify-center h-80">
+              <div className="card w-full max-w-7xl text-7xl justify-center h-80">
                 <ChartContainer
                   config={chartConfig}
                   className="h-[300px] w-full"
@@ -200,12 +200,13 @@ export default function Dashboard() {
                   <DropdownMenuTrigger>
                     <Icon
                       icon="lucide:info"
-                      className="mr-3 h-5 w-5 leading-none text-white/60"
+                      className="mr-3 h-5 w-5 leading-none text-white/40 hover:text-purple-400 anim"
                     />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className=" dark:bg-background-light">
                     <DropdownMenuLabel>
                       {/* Not sure what to put here for now. */}
+                      What is the configuration for?
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     {/* ss */}
@@ -260,8 +261,8 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="flex gap-6 h-full overflow-hidden">
-            <div className="card max-w-6xl !p-6 flex flex-col !h-full ">
+          <div className="flex gap-6 h- overflow-hidden">
+            <div className="card max-w-7xl !p-6 flex flex-col !h-full ">
               <h1 className="font-semibold text-lg">Recent Activity</h1>
               <p className="text-sm text-gray-300">
                 View your recent activity on kythi. This includes file uploads,
@@ -307,7 +308,7 @@ export default function Dashboard() {
                     <div className="flex flex-col gap-2 items-center">
                       <Icon
                         icon="lucide:image-plus"
-                        className="w-8 h-8 text-purple-400/50"
+                        className="w-8 h-8 text-purple-400/80"
                       />
                       <span className="font-medium text-gray-300">
                         Drop in a file or,
