@@ -25,6 +25,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/shadcn/pagination";
+import { Separator } from "@/components/shadcn/separator";
 
 const images = [
   {
@@ -197,22 +198,115 @@ const images = [
     size: "69.69mb",
     url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
   },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
+  {
+    name: "pc89yP5GC.png",
+    size: "69.69mb",
+    url: "https://cdn.nest.rip/uploads/158b1f89-668a-4d20-970f-51f632d2487a.png",
+  },
 ];
 
 export default function Gallery() {
   return (
     <>
-      <div className="flex p-9 gap-x-6 h-screen">
+      <div className="flex p-9 gap-x-6 h-screen overflow-scroll">
         <Sidebar location="gallery" />
-        <div className="flex flex-col w-full gap-12 ">
+        <div className="flex flex-col w-full gap-6 overflow-scroll">
           <div className="gap-2 flex flex-col w-fit justify-center">
             <h1 className="text-xl font-semibold">My Gallery</h1>
             <p className="text-sm">
               Here you can view, share, manage and download your images.
             </p>
             <Input className="mt-2 " placeholder="Search for a file" />
+            <div className="mt-2 flex gap-2">
+              {/* badges */}
+              <Button variant={"secondary"} size={"xs"}>
+                View all
+              </Button>
+              <Separator orientation="vertical" />
+              <Button variant={"opaque"} size={"xs"}>
+                Roblox
+              </Button>
+              <Button variant={"opaque"} size={"xs"}>
+                Minecraft
+              </Button>
+            </div>
           </div>
-          <div className="grid hide-scroll grid-cols-5 gap-5 gap-y-10 w-full overflow-y-auto ">
+          <div className="grid grid-cols-5 gap-y-10 w-full">
             {images.map((image, index) => (
               <motion.div
                 key={index}

@@ -42,10 +42,8 @@ const Sidebar: React.FC<{
     | "pastes"
     | "collections";
 }> = (props) => {
-  const [checked, setChecked] = React.useState(false);
-
   return (
-    <div className="flex-col w-72 rounded-sm  backdrop-blur-sm dark:bg-background-light  flex border-1.5 overflow-hidden">
+    <div className="flex-col w-72 rounded-sm  backdrop-blur-sm dark:bg-background-light flex border-1.5 overflow-hidden">
       <div className="w-full p-2 pt-5 pb-5 flex gap-2 bg-background-lighter justify-center items-center rounded-t-md border-b-1.5">
         {/*<Image className="h-6" src={Logo} width={80} alt="logo" />*/}
         <span className="text-2xl font-semibold">KYTHI</span>
@@ -53,7 +51,6 @@ const Sidebar: React.FC<{
       <div className="flex w-full flex-col px-4 py-2 text-xs gap-2 overflow-y-scroll scrollbar relative mt-2">
         <div className="flex gap-2 items-center pb-2 pl-2 mt-4">
           <p className="text-xs text-gray-300 font-semibold">General</p>
-
           <div className=" border-b border-b-gray-700 w-full" />
         </div>
         <SideLink
