@@ -36,7 +36,12 @@ export default function Register() {
 
   const { currentStep, handleSetCurrentStep, form } = useContext(StepContext);
 
-  const steps = [<Step1 key={0} />, <Step2 key={1} />, <Step3 key={2}/>, <Step4 key={3}/>];
+  const steps = [
+    <Step1 key={0} />,
+    <Step2 key={1} />,
+    <Step3 key={2} />,
+    <Step4 key={3} />,
+  ];
 
   useEffect(() => {
     const handleLoad = () => {
@@ -57,12 +62,10 @@ export default function Register() {
     <>
       <Navbar />
       <div className="flex h-screen ">
-        
-  
         <div className="flex flex-col w-full items-center justify-center p-12">
           <div className="max-w-lg w-full">{steps[currentStep - 1]}</div>
         </div>
-        <div className="flex-col lg:max-w-2xl w-full bg-[#f2f3f5] dark:bg-background-light h-full dark:text-white p-12 space-y-6 lg:block hidden">
+        <div className="flex-col lg:max-w-2xl w-full bg-[#f2f3f5] dark:bg-primary-background h-full dark:text-white p-12 space-y-6 lg:block hidden">
           <div className="grid gap-20 mt-32">
             <motion.div
               initial="hidden"

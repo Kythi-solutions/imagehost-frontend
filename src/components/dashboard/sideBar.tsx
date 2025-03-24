@@ -43,8 +43,8 @@ const Sidebar: React.FC<{
     | "collections";
 }> = (props) => {
   return (
-    <div className="flex-col w-72 rounded-sm  backdrop-blur-sm dark:bg-background-light flex border-1.5 overflow-hidden">
-      <div className="w-full p-2 pt-5 pb-5 flex gap-2 bg-background-lighter justify-center items-center rounded-t-md border-b-1.5">
+    <div className="flex-col w-72 rounded-sm  backdrop-blur-sm dark:bg-primary-background flex border-1.5 overflow-hidden">
+      <div className="w-full p-2 pt-5 pb-5 flex gap-2 bg-secondary-background justify-center items-center rounded-t-md border-b-1.5">
         {/*<Image className="h-6" src={Logo} width={80} alt="logo" />*/}
         <span className="text-2xl font-semibold">KYTHI</span>
       </div>
@@ -113,8 +113,8 @@ const Sidebar: React.FC<{
           href={"/dashboard/admin"}
         />
       </div>
-      <div className="mt-auto w-full flex justify-center border-t-2 border-background-lighter relative sidebarGlow">
-        <div className="w-full h-24 z-20 p-3 bg-background-light sidebarGlow">
+      <div className="mt-auto w-full flex justify-center border-t-2 border-secondary-background relative sidebarGlow">
+        <div className="w-full h-24 z-20 p-3 bg-primary-background sidebarGlow">
           <div className="w-full h-full justify-between flex items-center  ">
             <div className="flex items-center justify-center gap-3 rounded-sm p-3 relative overflow-hidden">
               <Image

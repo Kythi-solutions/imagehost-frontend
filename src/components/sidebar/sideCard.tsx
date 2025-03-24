@@ -21,16 +21,18 @@ export default function SideCard({
   return (
     <>
       <div className="flex flex-col gap-6 items-center justify-center">
-  {/*      <div
+        {/*      <div
           onClick={() => handleSetCurrentStep(number)}
           className={`flex items-center gap-4 rounded-md w-full hover:dark:bg-secondaryLighterHover hover:bg-card cursor-pointer p-4 pr-8  duration-300 border-solid border-2 border-secondaryLighterHover ${
             currentStep === number ? "dark:bg-secondaryLighter bg-card" : ""
           }`}
         >*/}
-                  <div
+        <div
           onClick={() => handleSetCurrentStep(number)}
-          className={`flex items-center gap-4 rounded-lg w-full hover:dark:bg-background-lighter hover:bg-card cursor-pointer bg-transparent p-4 pr-8  duration-300  ${
-            currentStep === number ? "bg-card dark:bg-background-lighter border-solid border-2 border-background-lighter" : ""
+          className={`flex items-center gap-4 rounded-lg w-full hover:dark:bg-secondary-background hover:bg-card cursor-pointer bg-transparent p-4 pr-8  duration-300  ${
+            currentStep === number
+              ? "bg-card dark:bg-secondary-background border-solid border-2 border-secondary-background"
+              : ""
           }`}
         >
           <div className="p-6 flex items-center rounded-lg dark:bg-secondaryAlternative shadow-lg">

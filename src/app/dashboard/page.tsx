@@ -203,7 +203,7 @@ export default function Dashboard() {
                       className="mr-3 h-5 w-5 leading-none text-white/40 hover:text-purple-400 anim"
                     />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className=" dark:bg-background-light">
+                  <DropdownMenuContent className="dark:bg-primary-background">
                     <DropdownMenuLabel>
                       {/* Not sure what to put here for now. */}
                       What is the configuration for?

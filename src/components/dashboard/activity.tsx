@@ -18,7 +18,7 @@ const Activity = ({
   return (
     <>
       <Link href={href}>
-        <div className="text-sm items-center flex border-1.5 rounded-lg bg-background-lighter overflow-hidden">
+        <div className="text-sm items-center flex border-1.5 rounded-lg bg-secondary-background overflow-hidden">
           <Image
             className="h-20 w-20"
             src={thumbnailUrl}
