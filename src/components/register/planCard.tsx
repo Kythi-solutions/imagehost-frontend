@@ -31,16 +31,16 @@ const PlanCard = ({
       transition={{ delay: id / 50 }}
       onKeyPress={onKeyPress}
       onClick={onClick}
-      className={`w-full text-start rounded-lg border-2 py-4 md:py-5 px-4 flex gap-4 md:flex-col md:justify-between cursor-pointer ${
-        isChosen && "border-bordinput"
-      } ${isActive && "border-bordinput"}`}
+      className={`w-full relative card overflow-hidden base text-start rounded-lg border-2 py-4 md:py-5 px-4 flex gap-4 md:flex-col md:justify-between cursor-pointer ${
+        isChosen && "!border-purple-400/40 anim"
+      } ${isActive && "!border-purple-400/40 anim"}`}
     >
       <div className="w-[25px] h-[25px] rounded-full overflow-hidden">
         <Icon icon={icon} className="w-full h-full object-cover" />
       </div>
       <div className="">
         <h2 className="font-semibold">{title}</h2>
-        <p className="text-gray-cool text-sm">
+        <p className="text-gray-300 text-sm">
           {priceYr ? `$${priceYr}/yr` : ""}
           {priceMo ? `$${priceMo}/mo` : ""}
         </p>

@@ -89,7 +89,7 @@ const Step4 = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <div className="p-4 hover:bg-secondary duration-300 w-full rounded-lg border-2 flex flex-col gap-3 items-center text-center cursor-pointer">
+                <div className="p-4 hover:card duration-300 fadeGlow overflow-hidden relative w-full !rounded-lg !border-2 flex flex-col gap-3 items-center text-center cursor-pointer">
                   <Icon className="w-8 h-8" icon={"lucide:mails"} />
                   <p className="font-semibold text-lg">Email</p>
                   <p className="text-sm">
@@ -122,7 +122,7 @@ const Step4 = () => {
 
             <Dialog>
               <DialogTrigger asChild>
-                <div className="p-4 hover:bg-secondary duration-300 w-full rounded-lg border-2 flex flex-col gap-3 items-center text-center cursor-pointer">
+                <div className="p-4 hover:card duration-300 fadeGlow overflow-hidden relative w-full !rounded-lg !border-2 flex flex-col gap-3 items-center text-center cursor-pointer">
                   <Icon className="w-8 h-8" icon={"lucide:fingerprint"} />
                   <p className="font-semibold text-lg">Authenticator App</p>
                   <p className="text-sm">
