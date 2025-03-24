@@ -34,7 +34,7 @@ export default function FeatureCard({
         <div className="rounded-xl w-fit mb-4 backdrop-blur-sm p-3 bg-gradient-to-b from-[#1e212a] to-[#16171f]">
           <Icon
             icon={icon}
-            className="h-5 w-5 text-white dark:text-primary-blue"
+            className="h-5 w-5 text-white dark:text-purple-400"
           />
         </div>
 

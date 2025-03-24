@@ -106,7 +106,7 @@ const Step4 = () => {
                     with a code to verify your account.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                   <Input disabled placeholder="user@user.com" />
                   <Button size="icon">
                     <Icon className="h-4 w-4" icon={"lucide:square-pen"} />
