@@ -113,8 +113,8 @@ const Sidebar: React.FC<{
           href={"/dashboard/admin"}
         />
       </div>
-      <div className="mt-auto w-full flex justify-center border-t-2 border-background-lighter relative sidebar_profile_glow">
-        <div className="w-full h-24 z-20 p-3 bg-background-light sidebar_profile_glow">
+      <div className="mt-auto w-full flex justify-center border-t-2 border-background-lighter relative sidebarGlow">
+        <div className="w-full h-24 z-20 p-3 bg-background-light sidebarGlow">
           <div className="w-full h-full justify-between flex items-center  ">
             <div className="flex items-center justify-center gap-3 rounded-sm p-3 relative overflow-hidden">
               <Image

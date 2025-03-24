@@ -170,6 +170,7 @@
   --glow_height: 30%;
   --card_blur: blur(50px);
 }
+
 .base::after {
   position: absolute;
   content: "";
@@ -180,6 +181,39 @@
   width: var(--glow_width);
   filter: var(--card_blur);
   -webkit-filter: var(--card_blur);
+}
+
+@keyframes glow-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fadeGlow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  height: var(--glow_height);
+  width: var(--glow_width);
+  filter: var(--card_blur);
+  -webkit-filter: var(--card_blur);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.fadeGlow:hover::after {
+  background: var(--base);
+  opacity: 1;
+  transform: scale(1);
+  animation: glow-animation 0.5s ease-in-out;
 }
 .decrease::after {
   position: absolute;
@@ -204,7 +238,7 @@
   -webkit-filter: var(--card_blur);
 }
 
-.sidebar_profile_glow::before {
+.sidebarGlow::before {
   position: absolute;
   content: "";
   top: -50%;
@@ -223,7 +257,8 @@
   filter: blur(120px);
   overflow: hidden;
 }
-.darken_overlay::after {
+
+/* .darken_overlay::after {
   position: absolute;
   content: "";
   top: 0;
@@ -234,4 +269,4 @@
   background: rgba(27, 28, 33, 0.5);
   overflow: hidden;
   backdrop-filter: blur(3px);
-}
+} */

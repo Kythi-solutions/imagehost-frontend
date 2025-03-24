@@ -17,14 +17,22 @@ import {
 } from "@/components/shadcn/dialog";
 
 import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/shadcn/pagination";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/shadcn/select";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/shadcn/tooltip";
+
 import { Separator } from "@/components/shadcn/separator";
 
 const images = [
@@ -304,6 +312,24 @@ export default function Gallery() {
               <Button variant={"opaque"} size={"xs"}>
                 Minecraft
               </Button>
+              {/* <Select>
+                <SelectTrigger className="w-fit h-7 border border-white/10 bg-black/20 shadow-sm hover:bg-black/50 hover:text-accent-foreground ">
+                  <SelectValue
+                    className="!placeholder:text-sm"
+                    placeholder=":"
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Fruits</SelectLabel>
+                    <SelectItem value="apple">Apple</SelectItem>
+                    <SelectItem value="banana">Banana</SelectItem>
+                    <SelectItem value="blueberry">Blueberry</SelectItem>
+                    <SelectItem value="grapes">Grapes</SelectItem>
+                    <SelectItem value="pineapple">Pineapple</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select> */}
             </div>
           </div>
           <div className="grid grid-cols-5 gap-y-10 w-full">
@@ -363,32 +389,70 @@ export default function Gallery() {
                                     link to quickly share your file with others.
                                   </DialogDescription>
                                 </DialogHeader>
-                                <div className="flex gap-2 items-center">
-                                  <Input
-                                    className="!h-8"
-                                    disabled
-                                    placeholder="https://nest.rip/f/85gse"
-                                  />
-                                  <Button size="icon" variant="outline">
-                                    <Icon
-                                      className="h-3.5 w-3.5"
-                                      icon={"lucide:copy-plus"}
-                                    />
-                                  </Button>
+                                <div className="flex">
+                                  <div className="w-full">
+                                    <p className="text-sm mb-2 font-semibold">
+                                      Embeded URL
+                                    </p>
+                                    <div className="flex items-center gap-2">
+                                      <Input
+                                        className="!h-8"
+                                        disabled
+                                        placeholder="https://nest.rip/f/85gse"
+                                      />
+
+                                      <Button size="icon" variant="outline">
+                                        <Icon
+                                          className="h-3.5 w-3.5"
+                                          icon={"lucide:copy-plus"}
+                                        />
+                                      </Button>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className="flex gap-2 items-center">
-                                  <Input
-                                    className="!h-8"
-                                    disabled
-                                    placeholder="https://cdn.nest.rip/uploads/3f428dbe-0343-404a-8ab5-9c1dbd79419a.png"
-                                  />
-                                  <Button size="icon" variant="outline">
-                                    <Icon
-                                      className="h-3.5 w-3.5"
-                                      icon={"lucide:copy-plus"}
-                                    />
-                                  </Button>
+
+                                <div className="flex">
+                                  <div className="w-full">
+                                    <div className="text-sm flex gap-2 items-center mb-2 font-semibold">
+                                      <p>Raw URL</p>{" "}
+                                      <TooltipProvider delayDuration={150}>
+                                        <Tooltip>
+                                          <TooltipTrigger asChild>
+                                            <Icon
+                                              className="h-4 w-4 hover:text-purple-400 duration-300"
+                                              icon={"lucide:info"}
+                                            />
+                                          </TooltipTrigger>
+                                          <TooltipContent className="max-w-xs">
+                                            <div className="space-y-2">
+                                              <p className="text-sm font-semibold">
+                                                Raw URL type
+                                              </p>
+
+                                              <p className="text-xs font-semibold">
+                                                Direct
+                                              </p>
+                                            </div>
+                                          </TooltipContent>
+                                        </Tooltip>
+                                      </TooltipProvider>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <Input
+                                        className="!h-8"
+                                        disabled
+                                        placeholder="https://cdn.nest.rip/uploads/3f428dbe-0343-404a-8ab5-9c1dbd79419a.png"
+                                      />
+                                      <Button size="icon" variant="outline">
+                                        <Icon
+                                          className="h-3.5 w-3.5"
+                                          icon={"lucide:copy-plus"}
+                                        />
+                                      </Button>
+                                    </div>
+                                  </div>
                                 </div>
+
                                 <DialogFooter>
                                   <Button type="submit" size="sm">
                                     Save changes

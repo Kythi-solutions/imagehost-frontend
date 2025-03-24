@@ -107,7 +107,7 @@ export default function Dashboard() {
                 <StatisticCard
                   title="Uploads"
                   value="1,200"
-                  growth={1.2}
+                  growth={25}
                   icon={
                     <Icon
                       icon="lucide:cloud-upload"
