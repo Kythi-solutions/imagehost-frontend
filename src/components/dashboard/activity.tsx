@@ -3,41 +3,78 @@ import * as React from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
+
 interface ActivityProps {
   title: string;
-  timestamp: Date;
-  href: string;
+  timestamp?: Date;
+  href?: string;
   thumbnailUrl?: string;
+  thumbnailIcon?: string;
+  theme?: "alert" | "danger" | "success";
 }
+
 const Activity = ({
   title,
   timestamp = new Date(),
+  thumbnailIcon,
   href = "/",
-  thumbnailUrl = "https://images.unsplash.com/photo-1719530910202-9f791d646ee6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  thumbnailUrl,
+  theme,
 }: ActivityProps) => {
+  const themeClasses = {
+    container: {
+      danger: "bg-red-500/10 dark:bg-red-600/10",
+      alert: "bg-amber-500/10 dark:bg-amber-600/10",
+      success: "bg-emerald-500/10 dark:bg-emerald-600/10",
+    },
+    icon: {
+      danger: "text-red-500 dark:text-red-400",
+      alert: "text-amber-500 dark:text-amber-400",
+      success: "text-emerald-500 dark:text-emerald-400",
+    },
+  };
+
   return (
-    <>
-      <Link href={href}>
-        <div className="text-sm items-center flex border-1.5 rounded-lg bg-secondary-background overflow-hidden">
+    <Link href={href}>
+      <div className="text-sm items-center flex border-1.5 rounded-lg bg-background-secondary overflow-hidden">
+        {thumbnailUrl ? (
           <Image
-            className="h-20 w-20"
+            className="h-20 w-20 object-cover"
             src={thumbnailUrl}
             alt={`Thumbnail for ${title}`}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
           />
-          <div className="w-full flex justify-between items-center px-6">
-            <div>
-              <p className="text-sm font-semibold">{title}</p>
-              <p className="text-xs text-white/60">{`${timestamp.toLocaleDateString()} - ${timestamp.toLocaleTimeString()}`}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              {/*<Icon icon="lucide:trash" className="h-5 w-5" />*/}
-            </div>
+        ) : thumbnailIcon ? (
+          <div
+            className={`h-20 w-20 flex items-center justify-center ${
+              theme ? themeClasses.container[theme] : "bg-gray-900/20"
+            }`}
+          >
+            <Icon
+              icon={thumbnailIcon}
+              className={`h-7 w-7 ${
+                theme ? themeClasses.icon[theme] : "text-white/50"
+              }`}
+            />
+          </div>
+        ) : null}
+
+        <div className="w-full flex justify-between items-center px-6">
+          <div>
+            <p className="text-sm font-semibold">{title}</p>
+            <p className="text-xs text-white/60">
+              {timestamp.toLocaleDateString()} -{" "}
+              {timestamp.toLocaleTimeString()}
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            {/*<Icon icon="lucide:trash" className="h-5 w-5" />*/}
           </div>
         </div>
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 };
+
 export default Activity;

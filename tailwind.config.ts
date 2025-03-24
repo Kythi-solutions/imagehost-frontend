@@ -28,8 +28,8 @@ const config = {
 
         background: {
           DEFAULT: "rgba(var(--background))",
-          light: "rgba(var(--primary-background))",
-          lighter: "rgba(var(--secondary-background))",
+          primary: "rgba(var(--background-primary))",
+          secondary: "rgba(var(--background-secondary))",
         },
 
         backgroundSecondary: "hsl(var(--backgroundSecondary))",

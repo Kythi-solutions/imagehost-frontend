@@ -29,9 +29,9 @@ export default function SideCard({
         >*/}
         <div
           onClick={() => handleSetCurrentStep(number)}
-          className={`flex items-center gap-4 rounded-lg w-full hover:dark:bg-secondary-background hover:bg-card cursor-pointer bg-transparent p-4 pr-8  duration-300  ${
+          className={`flex items-center gap-4 rounded-lg w-full hover:dark:bg-background-secondary hover:bg-card cursor-pointer bg-transparent p-4 pr-8  duration-300  ${
             currentStep === number
-              ? "bg-card dark:bg-secondary-background border-solid border-2 border-secondary-background"
+              ? "bg-card dark:bg-background-secondary border-solid border-2 border-background-secondary"
               : ""
           }`}
         >

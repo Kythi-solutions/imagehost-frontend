@@ -14,10 +14,10 @@ export default function SideBarDropdown() {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger className="outline-none hover:bg-secondary-background rounded-full p-2">
+        <DropdownMenuTrigger className="outline-none hover:bg-background-secondary rounded-full p-2">
           <Icon className="h-6 w-6" icon="lucide:ellipsis-vertical" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-64 dark:bg-primary-background">
+        <DropdownMenuContent className="w-64 dark:bg-background-primary">
           <DropdownMenuLabel>
             <p>Username</p>
             <p className="font-normal">user@outlook.com</p>

@@ -65,7 +65,7 @@ export default function Register() {
         <div className="flex flex-col w-full items-center justify-center p-12">
           <div className="max-w-lg w-full">{steps[currentStep - 1]}</div>
         </div>
-        <div className="flex-col lg:max-w-2xl w-full bg-[#f2f3f5] dark:bg-primary-background h-full dark:text-white p-12 space-y-6 lg:block hidden">
+        <div className="flex-col lg:max-w-2xl w-full bg-[#f2f3f5] dark:bg-background-primary h-full dark:text-white p-12 space-y-6 lg:block hidden">
           <div className="grid gap-20 mt-32">
             <motion.div
               initial="hidden"

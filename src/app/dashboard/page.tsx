@@ -203,7 +203,7 @@ export default function Dashboard() {
                       className="mr-3 h-5 w-5 leading-none text-white/40 hover:text-purple-400 anim"
                     />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="dark:bg-primary-background">
+                  <DropdownMenuContent className="dark:bg-background-primary">
                     <DropdownMenuLabel>
                       {/* Not sure what to put here for now. */}
                       What is the configuration for?
@@ -278,19 +278,21 @@ export default function Dashboard() {
                 />
                 <Activity
                   title="Login"
-                  thumbnailUrl="https://images.unsplash.com/photo-1719216324207-3b9727413913?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  thumbnailIcon="lucide:shield-alert"
                   timestamp={new Date()}
+                  theme="alert"
                   href="/"
                 />
                 <Activity
                   title="File Deleted"
-                  thumbnailUrl="https://images.unsplash.com/photo-1719216324034-2910e4347532?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  thumbnailIcon="lucide:folder-x"
+                  theme="danger"
                   timestamp={new Date()}
                   href="/"
                 />
                 <Activity
-                  title="File Deleted"
-                  thumbnailUrl="https://images.unsplash.com/photo-1719216324034-2910e4347532?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  title="ShareX File Upload"
+                  thumbnailUrl="https://images.unsplash.com/photo-1719530910202-9f791d646ee6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   timestamp={new Date()}
                   href="/"
                 />

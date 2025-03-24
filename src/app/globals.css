@@ -48,8 +48,8 @@
 
   .dark {
     --background: 20, 21, 24, 1;
-    --primary-background: 27, 28, 33, 1;
-    --secondary-background: 255, 255, 255, 0.02;
+    --background-primary: 27, 28, 33, 1;
+    --background-secondary: 255, 255, 255, 0.02;
 
     --foreground: 0 0% 98%;
 
@@ -126,7 +126,7 @@
   }
 
   .card {
-    @apply border-accent w-full bg-primary-background border-1.5 p-4 rounded-md overflow-hidden;
+    @apply border-accent w-full bg-background-primary border-1.5 p-4 rounded-md overflow-hidden;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
