@@ -66,14 +66,14 @@ const chartConfig = {
 export default function Dashboard() {
   return (
     <>
-      <div className="flex h-screen p-9 gap-x-6">
+      <div className="flex xl:h-screen md:p-9 p-4 gap-x-6">
         <Sidebar location="dash" />
         <Content>
-          <div className="flex gap-6 w-full">
+          <div className="flex flex-col gap-6 w-full xl:flex-row">
             {/* Graph and Statistics */}
             <div className="space-y-6 max-w-7xl w-full">
               {/* Statistic (top) */}
-              <div className="flex w-full  max-w-7xl gap-x-6">
+              <div className="flex w-full xl:flex-row xl:flex-nowrap flex-wrap flex-col gap-6 max-w-7xl">
                 <StatisticCard
                   title="Uploads"
                   value="1,200"
@@ -116,7 +116,8 @@ export default function Dashboard() {
                   }
                 />
               </div>
-              {/* Giraffe */}
+
+              {/* Giraffe (Graph!) */}
               <div className="card w-full max-w-7xl text-7xl justify-center h-80">
                 <ChartContainer
                   config={chartConfig}
@@ -194,7 +195,7 @@ export default function Dashboard() {
               </div>
             </div>
             {/* Config */}
-            <div className="card max-w-xl !p-6 relative">
+            <div className="card w-full xl:max-w-xl !p-6 relative">
               <div className="mt-8 text-sm absolute right-4 top-0">
                 <DropdownMenu>
                   <DropdownMenuTrigger>
@@ -203,7 +204,7 @@ export default function Dashboard() {
                       className="mr-3 h-5 w-5 leading-none text-white/40 hover:text-purple-400 anim"
                     />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="dark:bg-background-primary">
+                  <DropdownMenuContent className="dark:bg-background-primary card relative base">
                     <DropdownMenuLabel>
                       {/* Not sure what to put here for now. */}
                       What is the configuration for?
@@ -261,7 +262,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="flex gap-6 h- overflow-hidden">
+          <div className="flex flex-col xl:flex-row gap-6 overflow-hidden">
             <div className="card max-w-7xl !p-6 flex flex-col !h-full ">
               <h1 className="font-semibold text-lg">Recent Activity</h1>
               <p className="text-sm text-gray-300">
@@ -298,14 +299,14 @@ export default function Dashboard() {
                 />
               </div>
             </div>
-            <div className="card max-w-xl !h-full !p-6">
+            <div className="card xl:max-w-xl !h-full !p-6 !pb-12 md:pb-6">
               <h1 className="font-semibold text-lg">Upload a file</h1>
               <p className="text-sm text-gray-300">
                 Upload your files to kythi and be able to swiftly share them
                 with ease.
               </p>
-              <div className="max-w-xl h-full flex pb-10 pt-4">
-                <label className="flex justify-center w-full px-4 transition  border border-gray-400/50 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
+              <div className="h-[99%]  flex pb-10 pt-4">
+                <label className="flex justify-center p-2 w-full px-4 transition  border border-gray-400/50 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
                   <span className="flex items-center space-x-2 text-sm max-w-[250px] text-center">
                     <div className="flex flex-col gap-2 items-center">
                       <Icon
