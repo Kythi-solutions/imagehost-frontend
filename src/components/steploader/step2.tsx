@@ -4,6 +4,7 @@ import PlanCard from "@/components/register/planCard";
 
 import { AnimatePresence, motion } from "framer-motion";
 import Buttons from "../register/buttons";
+import { Switch } from "../shadcn/switch";
 
 const Step2 = () => {
   const { handleSetCurrentStep, currentStep, form } = useContext(StepContext);
@@ -132,20 +133,13 @@ const Step2 = () => {
 
           <div className="w-full pt-8 pb-4 md:py-10 flex items-center justify-center gap-4">
             <p>Monthly</p>
-            <button
+            <Switch
               onClick={() => {
                 setYearly(!yearly);
                 handlePlan(false);
-                // handleData3null();
               }}
-              className="w-8 aspect-video rounded-full bg-bordinput p-1"
-            >
-              <span
-                className={`block w-3 h-3 rounded-full bg-white duration-150 ${
-                  yearly ? "translate-x-full" : ""
-                }`}
-              ></span>
-            </button>
+              id="airplane-mode"
+            />
             <p>Yearly</p>
           </div>
         </div>
