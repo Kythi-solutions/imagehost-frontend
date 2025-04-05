@@ -9,3 +9,4 @@ Rewrite of the Kythi.com frontend.
 ## Authors
 - https://github.com/NahSahh
 - https://github.com/bbrooklyn
+- https://github.com/fem-rs
